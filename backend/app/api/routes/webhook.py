@@ -1,4 +1,7 @@
-"""WhatsApp webhook endpoint — receives and processes incoming messages."""
+"""WhatsApp webhook endpoint — receives and processes incoming messages.
+
+Plug-and-play: once WHATSAPP_* env vars are set, this handles the full flow.
+"""
 
 import hashlib
 import time
@@ -10,24 +13,14 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.core.config import settings
 from app.core.database import get_db
 from app.models.query_log import QueryLog
-from app.schemas.whatsapp import WhatsAppMessage
-from app.services.llm.parser import parse_drug_query
-from app.services.llm.responder import generate_response
-from app.services.search.drug_search import search_drugs
+from app.services.chatbot import SahiDawaChatbot
 from app.services.whatsapp.client import send_text_message
 
 logger = structlog.get_logger()
 router = APIRouter()
 
-WELCOME_MESSAGE = (
-    "Welcome to SahiDawa!\n\n"
-    "I help you find the cheapest way to buy any medicine near you.\n\n"
-    "Just send me a medicine name and I'll show you:\n"
-    "- Cheapest generic alternative\n"
-    "- Nearest Jan Aushadhi store\n"
-    "- Local chemist discounts\n\n"
-    "Try it now — type any medicine name!"
-)
+# Initialize chatbot (loads drug data on first message)
+chatbot = SahiDawaChatbot(use_llm=bool(settings.groq_api_key))
 
 
 @router.get("/webhook")
@@ -44,7 +37,7 @@ async def verify_webhook(
 
 @router.post("/webhook")
 async def receive_message(request: Request, db: AsyncSession = Depends(get_db)):
-    """Process incoming WhatsApp messages."""
+    """Process incoming WhatsApp messages via the chatbot engine."""
     body = await request.json()
     logger.debug("webhook_received", body=body)
 
@@ -58,67 +51,54 @@ async def receive_message(request: Request, db: AsyncSession = Depends(get_db)):
         return {"status": "no_message"}
 
     msg_data = messages[0]
-    msg = WhatsAppMessage(
-        from_number=msg_data["from"],
-        message_id=msg_data["id"],
-        text=msg_data.get("text", {}).get("body", ""),
-        timestamp=msg_data["timestamp"],
-        message_type=msg_data["type"],
-        location=msg_data.get("location"),
-    )
+    from_number = msg_data["from"]
+    msg_type = msg_data.get("type", "text")
 
+    # Extract text and location
+    text = ""
+    location = None
+    if msg_type == "text":
+        text = msg_data.get("text", {}).get("body", "")
+    elif msg_type == "interactive":
+        # Button reply
+        interactive = msg_data.get("interactive", {})
+        if interactive.get("type") == "button_reply":
+            text = interactive.get("button_reply", {}).get("title", "")
+        elif interactive.get("type") == "list_reply":
+            text = interactive.get("list_reply", {}).get("title", "")
+    elif msg_type == "location":
+        location = msg_data.get("location")
+        text = "location_shared"
+
+    if not text and not location:
+        return {"status": "unsupported_message_type"}
+
+    # Process through chatbot
     start_time = time.time()
+    response = chatbot.process_message(from_number, text, location=location)
+    elapsed_ms = int((time.time() - start_time) * 1000)
 
-    # Handle greetings
-    if msg.text.lower().strip() in ("hi", "hello", "hey", "start", "help"):
-        await send_text_message(msg.from_number, WELCOME_MESSAGE)
-        return {"status": "welcomed"}
-
-    # Parse the drug query via LLM
-    parsed = await parse_drug_query(msg.text)
-    logger.info("query_parsed", raw=msg.text, parsed=parsed.model_dump())
-
-    # Search the drug database
-    hits = search_drugs(parsed.drug_name)
-
-    if not hits:
-        await send_text_message(
-            msg.from_number,
-            f"Sorry, I couldn't find '{parsed.drug_name}' in our database. "
-            "Please check the spelling and try again.",
-        )
-        # Log the miss
-        db.add(QueryLog(
-            phone_hash=hashlib.sha256(msg.from_number.encode()).hexdigest(),
-            raw_input=msg.text,
-            parsed_drug=parsed.drug_name,
-            match_found=False,
-            response_time_ms=int((time.time() - start_time) * 1000),
-        ))
-        await db.commit()
-        return {"status": "no_match"}
-
-    # TODO: Build FullQueryResponse from hits + geo data, generate LLM response
-    # For now, return raw search results as formatted text
-    top = hits[0]
-    response_text = (
-        f"Found: {top.get('brand_name', 'Unknown')}\n"
-        f"Salt: {top.get('salt_composition', 'N/A')}\n"
-        f"MRP: Rs.{top.get('mrp', 'N/A')}\n\n"
-        "Full generic comparison coming soon!"
-    )
-    await send_text_message(msg.from_number, response_text)
+    # Send response via WhatsApp
+    await send_text_message(from_number, response.text)
 
     # Log the query
-    elapsed_ms = int((time.time() - start_time) * 1000)
     db.add(QueryLog(
-        phone_hash=hashlib.sha256(msg.from_number.encode()).hexdigest(),
-        raw_input=msg.text,
-        parsed_drug=parsed.drug_name,
-        parsed_salt=parsed.salt_composition,
-        match_found=True,
+        phone_hash=hashlib.sha256(from_number.encode()).hexdigest(),
+        raw_input=text,
+        parsed_drug=chatbot._get_session(from_number).last_query,
+        match_found=chatbot._get_session(from_number).last_result.matched
+        if chatbot._get_session(from_number).last_result
+        else None,
         response_time_ms=elapsed_ms,
+        language=response.language,
     ))
     await db.commit()
+
+    logger.info(
+        "message_processed",
+        from_hash=hashlib.sha256(from_number.encode()).hexdigest()[:8],
+        input=text[:50],
+        response_ms=elapsed_ms,
+    )
 
     return {"status": "responded"}
