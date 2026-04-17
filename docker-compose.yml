@@ -1,0 +1,46 @@
+services:
+  postgres:
+    image: postgis/postgis:16-3.4
+    container_name: sahidawa-postgres
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-sahidawa}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-changeme}
+      POSTGRES_DB: ${POSTGRES_DB:-sahidawa}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - ./docker/pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U sahidawa"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: sahidawa-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./docker/redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  meilisearch:
+    image: getmeili/meilisearch:v1.11
+    container_name: sahidawa-meili
+    environment:
+      MEILI_MASTER_KEY: ${MEILI_MASTER_KEY:-changeme_meili_master_key}
+      MEILI_ENV: development
+    ports:
+      - "7700:7700"
+    volumes:
+      - ./docker/meili_data:/meili_data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7700/health"]
+      interval: 5s
+      timeout: 5s
+      retries: 5

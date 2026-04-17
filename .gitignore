@@ -1,0 +1,58 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+.eggs/
+venv/
+.venv/
+
+# Environment
+.env
+.env.local
+.env.production
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node (web/)
+node_modules/
+web/.next/
+web/dist/
+web/build/
+
+# Data
+data/raw/
+data/exports/
+*.csv
+*.xlsx
+!data/seeds/*.csv
+
+# Docker
+docker/pgdata/
+docker/meili_data/
+docker/redis_data/
+
+# Logs
+*.log
+logs/
+
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Misc
+*.bak
+*.tmp
