@@ -1,18 +1,16 @@
-"""LLM-powered salt normalization pipeline.
+"""Salt composition normalization — now integrated into ingest_medicines.py.
 
-Takes raw drug entries from scraped sources and normalizes them into
-structured salt composition mappings using batch LLM processing.
+The original plan was to use LLM batch processing for normalization.
+In practice, the Indian Medicine Dataset already has structured composition
+fields that can be normalized with regex + synonym mapping.
 
-Workflow:
-1. Read raw drug entries (brand name, composition string)
-2. Send to LLM for structured extraction
-3. Cluster synonyms (Paracetamol = Acetaminophen = PCM)
-4. Write normalized data to PostgreSQL
+See ingest_medicines.py for the actual implementation:
+  - parse_composition(): extracts salt name + strength from "Paracetamol (500mg)"
+  - normalize_salt_name(): maps synonyms (Acetaminophen → Paracetamol)
+  - build_salt_index(): deduplicates 7,428 raw strings into 1,648 unique molecules
 
-TODO: Implement batch processing pipeline.
+LLM normalization can be added later for:
+  - Edge cases the regex misses
+  - New drugs submitted by users
+  - Cross-referencing CDSCO and NPPA data with different naming conventions
 """
-
-
-def normalize_salt_compositions(raw_entries: list[dict]) -> list[dict]:
-    """Use LLM to normalize raw salt composition strings."""
-    raise NotImplementedError("Implement LLM-based salt normalization")
