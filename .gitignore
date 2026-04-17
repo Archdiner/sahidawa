@@ -32,12 +32,10 @@ web/.next/
 web/dist/
 web/build/
 
-# Data
+# Data (large files — regenerated via `make data-all`)
 data/raw/
+data/processed/
 data/exports/
-*.csv
-*.xlsx
-!data/seeds/*.csv
 
 # Docker
 docker/pgdata/

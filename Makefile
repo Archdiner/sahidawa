@@ -33,6 +33,32 @@ migrate: ## Run database migrations
 migration: ## Create a new migration (usage: make migration msg="add users table")
 	cd backend && . .venv/bin/activate && alembic revision --autogenerate -m "$(msg)"
 
+# ── Data Pipeline ──
+
+data-download: ## Download raw medicine dataset from GitHub
+	mkdir -p data/raw
+	curl -L -o data/raw/indian_medicines.csv "https://raw.githubusercontent.com/junioralive/Indian-Medicine-Dataset/main/DATA/indian_medicine_data.csv"
+
+data-process: ## Process raw CSV into normalized salt compositions + drugs
+	python3 data/processors/ingest_medicines.py
+
+data-scrape-stores: ## Scrape Jan Aushadhi stores from genericdrugscan.com (~2hrs)
+	python3 data/scrapers/jan_aushadhi.py
+
+data-scrape-nppa: ## Scrape NPPA ceiling prices from laafon.com
+	python3 data/scrapers/nppa.py
+
+data-seed: ## Seed PostgreSQL from processed CSVs (needs: make infra + make migrate)
+	cd backend && . .venv/bin/activate && python3 ../data/processors/seed_database.py
+
+data-index: ## Index drugs into Meilisearch (needs: make infra)
+	cd backend && . .venv/bin/activate && python3 ../data/processors/index_drugs.py
+
+data-geocode: ## Geocode stores with Google Maps API (needs GOOGLE_MAPS_API_KEY)
+	python3 data/processors/geocode.py
+
+data-all: data-download data-process ## Download + process (no external services needed)
+
 # ── Testing ──
 
 test: ## Run all tests
