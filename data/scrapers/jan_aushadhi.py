@@ -18,9 +18,14 @@ import requests
 from bs4 import BeautifulSoup
 
 BASE_URL = "https://www.genericdrugscan.com/jan-aushadhi-stores"
+SITE_ROOT = "https://www.genericdrugscan.com"
 OUTPUT_DIR = Path(__file__).parent.parent / "raw"
-HEADERS = {"User-Agent": "SahiDawa-DataPipeline/0.1 (health-data-research)"}
-REQUEST_DELAY = 1.0  # seconds between requests — be respectful
+HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9",
+}
+REQUEST_DELAY = 1.5  # seconds between requests — be respectful
 
 
 def get_soup(url: str) -> BeautifulSoup:
@@ -35,75 +40,127 @@ def scrape_state_list() -> list[dict]:
     """Get list of all states with their URL slugs."""
     soup = get_soup(BASE_URL)
     states = []
-    # State links follow pattern /jan-aushadhi-stores/{state-slug}/
+    seen = set()
+    prefix = f"{SITE_ROOT}/jan-aushadhi-stores/"
     for link in soup.find_all("a", href=True):
-        href = link["href"]
-        if href.startswith("/jan-aushadhi-stores/") and href.count("/") == 3:
-            slug = href.strip("/").split("/")[-1]
-            name = link.get_text(strip=True)
-            if slug and name and slug != "jan-aushadhi-stores":
-                states.append({"name": name, "slug": slug})
+        href = link["href"].rstrip("/")
+        # Match both full URLs and relative paths
+        if href.startswith(prefix):
+            slug = href[len(prefix):].strip("/")
+        elif href.startswith("/jan-aushadhi-stores/"):
+            slug = href[len("/jan-aushadhi-stores/"):].strip("/")
+        else:
+            continue
+
+        # Must be a single-level slug (state, not state/district)
+        if not slug or "/" in slug or slug in seen:
+            continue
+
+        name = link.get_text(strip=True)
+        if name and len(name) < 80:
+            states.append({"name": name, "slug": slug})
+            seen.add(slug)
     return states
 
 
 def scrape_district_list(state_slug: str) -> list[dict]:
     """Get list of districts for a state with their URL slugs."""
-    url = f"{BASE_URL}/{state_slug}/"
+    url = f"{BASE_URL}/{state_slug}"
     soup = get_soup(url)
     districts = []
+    seen = set()
+    # Match both full URLs and relative paths for districts
+    full_prefix = f"{SITE_ROOT}/jan-aushadhi-stores/{state_slug}/"
+    rel_prefix = f"/jan-aushadhi-stores/{state_slug}/"
     for link in soup.find_all("a", href=True):
-        href = link["href"]
-        prefix = f"/jan-aushadhi-stores/{state_slug}/"
-        if href.startswith(prefix) and href != prefix:
-            slug = href.strip("/").split("/")[-1]
-            name = link.get_text(strip=True)
-            # Filter out non-district links (nav, footer, etc.)
-            if slug and name and len(name) < 100:
-                districts.append({"name": name, "slug": slug})
+        href = link["href"].rstrip("/")
+        if href.startswith(full_prefix):
+            slug = href[len(full_prefix):].strip("/")
+        elif href.startswith(rel_prefix):
+            slug = href[len(rel_prefix):].strip("/")
+        else:
+            continue
+
+        if not slug or "/" in slug or slug in seen:
+            continue
+
+        name = link.get_text(strip=True)
+        if name and len(name) < 100:
+            districts.append({"name": name, "slug": slug})
+            seen.add(slug)
     return districts
 
 
 def scrape_district_stores(state_slug: str, district_slug: str) -> list[dict]:
-    """Scrape all store cards from a district page."""
-    url = f"{BASE_URL}/{state_slug}/{district_slug}/"
+    """Scrape all store cards from a district page.
+
+    Page structure is label/value pairs on separate lines:
+      Store Code
+      PMBJK00863
+      Address
+      Mm-1/70 Sector-A ...
+      District
+      Lucknow
+      ...
+    """
+    url = f"{BASE_URL}/{state_slug}/{district_slug}"
     soup = get_soup(url)
     stores = []
+    seen_codes = set()
 
-    # Store data is in card-like blocks with labeled fields
-    # Look for consistent patterns: store code, address, pin, phone
-    for card in soup.find_all(["div", "article", "section"], class_=True):
-        text = card.get_text(separator="\n")
-        if "PMBJK" not in text and "Address" not in text:
-            continue
+    full_text = soup.get_text(separator="\n")
+    lines = [l.strip() for l in full_text.split("\n") if l.strip()]
 
-        store = {}
-        # Extract store code
-        code_match = re.search(r"(PMBJK\d+)", text)
-        if code_match:
-            store["store_code"] = code_match.group(1)
+    # Walk through lines; when we see "Store Code" label, the next line is the code
+    i = 0
+    while i < len(lines):
+        if lines[i] == "Store Code" and i + 1 < len(lines):
+            code = lines[i + 1].strip()
+            if not re.match(r"PMBJK\d+", code):
+                i += 1
+                continue
+            if code in seen_codes:
+                i += 1
+                continue
+            seen_codes.add(code)
 
-        # Extract labeled fields
-        for line in text.split("\n"):
-            line = line.strip()
-            if ":" in line:
-                key, _, val = line.partition(":")
-                key = key.strip().lower()
-                val = val.strip()
-                if "address" in key:
-                    store["address"] = val
-                elif "district" in key:
-                    store["district"] = val
-                elif "state" in key:
-                    store["state"] = val
-                elif "pin" in key:
-                    store["pin_code"] = val
-                elif "contact detail" in key or "phone" in key:
-                    store["phone"] = val if val not in ("N/A", "TBU", "") else ""
-                elif "status" in key:
-                    store["status"] = val
+            store = {"store_code": code}
+            # Read subsequent label/value pairs until we hit next "Store Code" or end
+            j = i + 2
+            while j < len(lines):
+                label = lines[j].strip()
+                if label == "Store Code":
+                    break  # next store
+                if label in ("Address", "District", "State", "Pin Code",
+                             "Contact Person", "Contact Detail", "Status") and j + 1 < len(lines):
+                    val = lines[j + 1].strip()
+                    if label == "Address":
+                        store["address"] = val
+                    elif label == "District":
+                        store["district"] = val
+                    elif label == "State":
+                        store["state"] = val
+                    elif label == "Pin Code":
+                        pin = re.search(r"\d{6}", val)
+                        store["pin_code"] = pin.group(0) if pin else val
+                    elif label == "Contact Detail":
+                        phone = val
+                        if phone.startswith("Mobile---"):
+                            phone = phone.replace("Mobile---", "").strip()
+                        if phone in ("N", "N/A", "TBU", "To be updated", ""):
+                            phone = ""
+                        store["phone"] = phone
+                    elif label == "Status":
+                        store["status"] = val
+                    j += 2  # skip label + value
+                else:
+                    j += 1
 
-        if store.get("store_code") or store.get("address"):
-            stores.append(store)
+            if store.get("address") or store.get("pin_code"):
+                stores.append(store)
+            i = j
+        else:
+            i += 1
 
     return stores
 
