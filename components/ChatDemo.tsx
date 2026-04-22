@@ -139,28 +139,13 @@ export default function ChatDemo() {
 
   return (
     <section className="demo-section" id="demo" ref={ref}>
+      <div className="demo-header container">
+        <p className="demo-eyebrow">Live demo</p>
+        <h2 className="demo-title">See it work. Right now.</h2>
+        <p className="demo-sub">Branded, generic, misspelled — type anything. Real data, real prices.</p>
+      </div>
       <div className="container">
-        <div className={`demo-context sr ${visible ? 'v' : ''}`}>
-          <h2 className="demo-title">See it work. Right now.</h2>
-          <p>
-            Type any medicine name — branded, generic, misspelled — and get an
-            instant price comparison with real data from 62,000+ medicines.
-          </p>
-          <div className="stats">
-            {[
-              { num: '62,000+', label: 'Medicines mapped' },
-              { num: '10,000+', label: 'Jan Aushadhi stores' },
-              { num: '<3s', label: 'Response time' },
-            ].map(s => (
-              <div key={s.label} className="stat-item">
-                <div className="stat-num">{s.num}</div>
-                <div className="stat-label">{s.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className={`chat-wrap sr ${visible ? 'v' : ''}`} style={{ transitionDelay: '0.1s' }}>
+        <div className={`chat-wrap sr ${visible ? 'v' : ''}`}>
           <div className="chat-window">
             <div className="chat-header">
               <div className="ch-ava">S</div>

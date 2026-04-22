@@ -1,6 +1,24 @@
 'use client'
 import { useEffect, useRef, useState } from 'react'
 
+const STEPS = [
+  {
+    num: '01',
+    title: 'Type any medicine name',
+    body: 'Branded, generic, or misspelled — Crocin, paracetomol, Glycomet. Our system understands all of them.',
+  },
+  {
+    num: '02',
+    title: 'Get the cheapest alternative',
+    body: 'Instantly see the generic equivalent, the government ceiling price, and the nearest Jan Aushadhi store.',
+  },
+  {
+    num: '03',
+    title: 'Walk in and save',
+    body: 'Same molecule. Same CDSCO approval. Same efficacy. A fraction of the price.',
+  },
+]
+
 export default function HowItWorks() {
   const ref = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState(false)
@@ -17,42 +35,25 @@ export default function HowItWorks() {
   return (
     <section className="how" id="how" ref={ref}>
       <div className="container">
-        <div className={`how-top sr ${visible ? 'v' : ''}`}>
-          <h2>
-            One message.<br />
-            Three answers.<br />
-            Three seconds.
-          </h2>
-          <p>
-            No app to download. No account to create.<br />
-            Try the live demo above — or wait for our WhatsApp launch.
-          </p>
+        <div className={`how-head sr ${visible ? 'v' : ''}`}>
+          <p className="how-eyebrow">How it works</p>
+          <h2>Three steps.<br />Three seconds.</h2>
         </div>
-        <div className={`how-row sr ${visible ? 'v' : ''}`} style={{ transitionDelay: '0.15s' }}>
-          {[
-            {
-              num: '01',
-              title: 'Send any medicine name',
-              body: 'Branded, generic, misspelled — our system understands all of them. Just type and send.',
-            },
-            {
-              num: '02',
-              title: 'Get the real alternatives',
-              body: 'See the cheapest generic equivalent, the nearest Jan Aushadhi government store, and local chemist discounts.',
-            },
-            {
-              num: '03',
-              title: 'Walk in and save',
-              body: 'Same active ingredient. Same CDSCO approval. Same efficacy. Different price tag — up to 90% less.',
-            },
-          ].map(cell => (
-            <div key={cell.num} className="how-cell">
-              <div className="num">{cell.num}</div>
-              <h3>{cell.title}</h3>
-              <p>{cell.body}</p>
+        <div className={`how-steps sr ${visible ? 'v' : ''}`} style={{ transitionDelay: '0.1s' }}>
+          {STEPS.map((step, i) => (
+            <div key={step.num} className="how-step">
+              <div className="how-step-num">{step.num}</div>
+              <div className="how-step-body">
+                <h3>{step.title}</h3>
+                <p>{step.body}</p>
+              </div>
+              {i < STEPS.length - 1 && <div className="how-step-arrow">→</div>}
             </div>
           ))}
         </div>
+        <p className={`how-foot sr ${visible ? 'v' : ''}`} style={{ transitionDelay: '0.2s' }}>
+          No app. No account. No download.
+        </p>
       </div>
     </section>
   )
