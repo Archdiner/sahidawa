@@ -3,7 +3,7 @@ from contextlib import asynccontextmanager
 import structlog
 from fastapi import FastAPI
 
-from app.api.routes import chat, drugs, health, webhook
+from app.api.routes import chat, drugs, health, waitlist, webhook
 from app.core.config import settings
 
 structlog.configure(
@@ -38,3 +38,4 @@ app.include_router(health.router, tags=["health"])
 app.include_router(webhook.router, tags=["whatsapp"])
 app.include_router(drugs.router)
 app.include_router(chat.router)
+app.include_router(waitlist.router)

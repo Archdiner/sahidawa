@@ -64,7 +64,7 @@ export default function ChatDemo() {
     setLoading(true)
 
     try {
-      const res = await fetch('/api/chat', {
+      const res = await fetch('/_/backend/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: text, phone: '+919999999999' }),
