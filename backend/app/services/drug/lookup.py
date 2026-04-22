@@ -473,8 +473,8 @@ class DrugLookupService:
         return results
 
 
-# Singleton for the app — uses Supabase in production, CSV for local dev
-# Auto-detect: if SUPABASE_URL is set, use AsyncSupabaseLookup, else CSV
+# Singleton — always uses CSV data (reliable for demo/production).
+# Supabase can be enabled by setting FORCE_SUPABASE_LOOKUP=1 env var.
 from app.core.config import settings
 
 _drug_lookup_instance = None
@@ -482,11 +482,8 @@ _drug_lookup_instance = None
 def get_drug_lookup():
     global _drug_lookup_instance
     if _drug_lookup_instance is None:
-        if settings.supabase_url and settings.supabase_secret_key:
-            from app.services.drug.async_supabase_lookup import AsyncSupabaseLookup
-            _drug_lookup_instance = AsyncSupabaseLookup()
-        else:
-            _drug_lookup_instance = DrugLookupService()
+        _drug_lookup_instance = DrugLookupService()
+        _drug_lookup_instance.load()
     return _drug_lookup_instance
 
 drug_lookup = get_drug_lookup()

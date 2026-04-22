@@ -76,7 +76,6 @@ class SahiDawaChatbot:
         self._sessions: dict[str, UserSession] = {}
         self._use_llm = use_llm
         self._groq_client = None
-        drug_lookup.load()
 
         if use_llm:
             self._init_groq()
