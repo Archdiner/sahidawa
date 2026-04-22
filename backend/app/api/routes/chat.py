@@ -8,11 +8,12 @@ Usage:
 from fastapi import APIRouter
 from pydantic import BaseModel
 
+from app.core.config import settings
 from app.services.chatbot import SahiDawaChatbot
 
 router = APIRouter(prefix="/chat", tags=["chat"])
 
-chatbot = SahiDawaChatbot()
+chatbot = SahiDawaChatbot(use_llm=bool(settings.groq_api_key))
 
 
 class ChatRequest(BaseModel):

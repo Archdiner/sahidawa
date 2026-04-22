@@ -13,26 +13,71 @@ function formatTime() {
 }
 
 function formatBotText(text: string): React.ReactNode[] {
-  return text.split('\n').map((line, i) => {
-    if (!line) return <br key={i} />
-    if (line.startsWith('[BRAND]')) return <strong key={i} className="msg-brand">{line.replace('[BRAND] ', '')}</strong>
-    if (line.startsWith('[CHEAPEST GENERIC]') || line.startsWith('[JAN') || line.startsWith('[WARNING]') || line.startsWith('[GOVT')) {
-      return <span key={i} className="msg-section">{line}</span>
+  const lines = text.split('\n')
+  const nodes: React.ReactNode[] = []
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i]
+
+    // Empty line → small gap
+    if (!line.trim()) {
+      nodes.push(<span key={i} className="msg-gap" />)
+      continue
     }
-    if (line.startsWith('Save')) return <span key={i} className="msg-save">{line}</span>
-    if (line.startsWith('  -')) return <span key={i} className="msg-store">{line.trim()}</span>
-    // Bold key
-    const boldMatch = line.match(/^(Brand|Salt|MRP|By|Price|You save):?\s*/)
-    if (boldMatch) {
-      const after = line.slice(boldMatch[0].length)
-      return (
-        <span key={i}>
-          <strong>{boldMatch[0]}</strong>{after}
+
+    // Section headers: [CHEAPEST GENERIC], [TOP 5 OF...], [GOVT...], [JAN...], [TIP], [WARNING]
+    if (line.startsWith('[')) {
+      if (line.startsWith('[BRAND]')) {
+        nodes.push(<strong key={i} className="msg-brand">{line.replace('[BRAND] ', '')}</strong>)
+      } else if (line.startsWith('[WARNING]')) {
+        nodes.push(<span key={i} className="msg-warning">{line.replace('[WARNING] ', '')}</span>)
+      } else if (line.startsWith('[TIP]')) {
+        nodes.push(<span key={i} className="msg-tip">{line.replace('[TIP] ', '')}</span>)
+      } else {
+        nodes.push(<span key={i} className="msg-section">{line.replace(/^\[|\]$/g, '').replace(']:$', '')}</span>)
+      }
+      continue
+    }
+
+    // "You save: X (Y%)" → green savings badge
+    if (line.startsWith('You save:')) {
+      nodes.push(<span key={i} className="msg-save">{line}</span>)
+      continue
+    }
+
+    // Numbered list items: "1. Babymol 500mg..."
+    const numMatch = line.match(/^(\d+\.\s)(.+)/)
+    if (numMatch) {
+      nodes.push(
+        <span key={i} className="msg-list-item">
+          <span className="msg-list-num">{numMatch[1]}</span>{numMatch[2]}
         </span>
       )
+      continue
     }
-    return <span key={i}>{line}</span>
-  })
+
+    // Store lines: "  - ..." or "  1. Store..."
+    if (line.startsWith('  ')) {
+      nodes.push(<span key={i} className="msg-store">{line.trim()}</span>)
+      continue
+    }
+
+    // Key: value pairs — Salt, MRP, By, Price
+    const kvMatch = line.match(/^(Salt|MRP|By|Price):\s*(.+)/)
+    if (kvMatch) {
+      nodes.push(
+        <span key={i} className="msg-kv">
+          <strong>{kvMatch[1]}:</strong> {kvMatch[2]}
+        </span>
+      )
+      continue
+    }
+
+    // Default
+    nodes.push(<span key={i} className="msg-line">{line}</span>)
+  }
+
+  return nodes
 }
 
 export default function ChatDemo() {
@@ -41,7 +86,7 @@ export default function ChatDemo() {
   const [messages, setMessages] = useState<Message[]>([])
   const [input, setInput] = useState('')
   const [loading, setLoading] = useState(false)
-  const bottomRef = useRef<HTMLDivElement>(null)
+  const msgsRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const obs = new IntersectionObserver(
@@ -53,7 +98,8 @@ export default function ChatDemo() {
   }, [])
 
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
+    const el = msgsRef.current
+    if (el) el.scrollTop = el.scrollHeight
   }, [messages])
 
   async function send(text: string) {
@@ -123,7 +169,7 @@ export default function ChatDemo() {
                 <div className="ch-status">online</div>
               </div>
             </div>
-            <div className="chat-msgs">
+            <div className="chat-msgs" ref={msgsRef}>
               {messages.length === 0 && (
                 <div className="chat-empty">
                   <p>Send a medicine name to get started.</p>
@@ -148,7 +194,6 @@ export default function ChatDemo() {
                   </div>
                 </div>
               )}
-              <div ref={bottomRef} />
             </div>
             <div className="chat-input-bar">
               <input
@@ -289,12 +334,11 @@ export default function ChatDemo() {
         .quick-btn:hover { opacity: 0.85; transform: translateY(-1px); }
 
         .cm {
-          max-width: 82%;
-          padding: 8px 12px 4px;
+          max-width: 86%;
+          padding: 8px 12px 6px;
           border-radius: 10px;
           font-size: 13px;
-          line-height: 1.5;
-          white-space: pre-wrap;
+          line-height: 1.55;
           word-break: break-word;
           animation: msgIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
         }
@@ -313,13 +357,51 @@ export default function ChatDemo() {
           border-radius: 0 10px 10px 10px;
           border: 1px solid rgba(0,0,0,.06);
         }
-        .cm-text { }
-        .cm-time { font-size: 9px; color: #999; text-align: right; margin-top: 2px; }
-        .cm strong { font-weight: 700; display: block; }
-        .msg-brand { font-weight: 700; color: var(--text); }
-        .msg-section { display: block; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--green); margin: 6px 0 2px; }
-        .msg-save { display: inline-block; background: rgba(13,124,86,.08); color: var(--green); padding: 1px 6px; border-radius: 3px; font-size: 10px; font-weight: 700; margin-top: 3px; }
-        .msg-store { display: block; color: var(--text-2); font-size: 12px; }
+        .cm-text { display: flex; flex-direction: column; gap: 1px; }
+        .cm-time { font-size: 9px; color: #999; text-align: right; margin-top: 4px; }
+        .msg-brand { font-weight: 700; color: var(--text); font-size: 14px; }
+        .msg-section {
+          display: block;
+          font-size: 9px;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.8px;
+          color: var(--green);
+          margin-top: 8px;
+          margin-bottom: 1px;
+          opacity: 0.8;
+        }
+        .msg-save {
+          display: inline-block;
+          background: rgba(13,124,86,.1);
+          color: var(--green);
+          padding: 2px 8px;
+          border-radius: 4px;
+          font-size: 11px;
+          font-weight: 700;
+          margin-top: 2px;
+          margin-bottom: 2px;
+        }
+        .msg-store { color: var(--text-2); font-size: 12px; }
+        .msg-kv { color: var(--text-2); }
+        .msg-kv strong { color: var(--text); font-weight: 600; }
+        .msg-list-item { color: var(--text-2); font-size: 12px; }
+        .msg-list-num { color: var(--text-3); font-weight: 600; min-width: 20px; }
+        .msg-line { color: var(--text); }
+        .msg-gap { display: block; height: 4px; }
+        .msg-warning {
+          display: block;
+          font-size: 10px;
+          color: var(--text-3);
+          font-style: italic;
+          margin-top: 4px;
+        }
+        .msg-tip {
+          display: block;
+          font-size: 11px;
+          color: var(--text-3);
+          margin-top: 4px;
+        }
 
         .typing { padding: 12px 16px; }
         .typing-dots { display: flex; gap: 4px; align-items: center; }
