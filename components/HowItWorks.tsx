@@ -54,68 +54,6 @@ export default function HowItWorks() {
           ))}
         </div>
       </div>
-      <style>{`
-        .how { padding: clamp(64px, 9vh, 100px) 0; }
-        .how-top {
-          display: flex;
-          justify-content: space-between;
-          align-items: flex-end;
-          gap: 40px;
-          margin-bottom: 56px;
-          flex-wrap: wrap;
-        }
-        .how-top h2 {
-          font-family: var(--serif);
-          font-size: clamp(28px, 3.4vw, 42px);
-          font-weight: 700;
-          letter-spacing: -1px;
-          line-height: 1.1;
-          max-width: 400px;
-        }
-        .how-top p {
-          font-size: 14px;
-          color: var(--text-3);
-          max-width: 340px;
-          line-height: 1.65;
-          text-align: right;
-        }
-        .how-row {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 1px;
-          background: var(--line);
-          border: 1px solid var(--line);
-          border-radius: 16px;
-          overflow: hidden;
-        }
-        .how-cell {
-          background: var(--card);
-          padding: 40px 32px;
-        }
-        .how-cell .num {
-          font-family: var(--serif);
-          font-size: 36px;
-          font-weight: 700;
-          color: var(--green);
-          margin-bottom: 20px;
-          letter-spacing: -1px;
-        }
-        .how-cell h3 {
-          font-size: 17px;
-          font-weight: 700;
-          margin-bottom: 10px;
-          letter-spacing: -0.2px;
-        }
-        .how-cell p {
-          font-size: 13.5px;
-          color: var(--text-2);
-          line-height: 1.65;
-        }
-        @media (max-width: 860px) {
-          .how-row { grid-template-columns: 1fr; }
-          .how-top p { text-align: left; }
-        }
-      `}</style>
     </section>
   )
 }
