@@ -1,27 +1,12 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "api/**/*.py",
-      "use": "@vercel/python",
-      "config": { "runtime": "python3.11" }
-    },
-    {
-      "src": "web/**",
-      "use": "@vercel/next"
+  "framework": "nextjs",
+  "functions": {
+    "api/**/*.py": {
+      "runtime": "@vercel/python@4",
+      "maxDuration": 30
     }
-  ],
-  "routes": [
-    { "src": "/api/chat", "dest": "api/chat.py" },
-    { "src": "/api/waitlist", "dest": "api/waitlist.py" },
-    { "src": "/api/health", "dest": "api/health.py" },
-    { "src": "/(.*)", "dest": "web/$1" }
-  ],
-  "env": [
-    { "key": "GROQ_API_KEY", "value": "@groq_api_key" },
-    { "key": "SUPABASE_URL", "value": "@supabase_url" },
-    { "key": "SUPABASE_SECRET_KEY", "value": "@supabase_secret_key" },
-    { "key": "GOOGLE_MAPS_API_KEY", "value": "@google_maps_api_key" },
-    { "key": "SAHIDAWA_API_BASE", "value": "https://sahidawa.vercel.app" }
+  },
+  "rewrites": [
+    { "source": "/api/:path*", "destination": "/api/:path*" }
   ]
 }

@@ -26,11 +26,10 @@ venv/
 .DS_Store
 Thumbs.db
 
-# Node (web/)
+# Node / Next.js
 node_modules/
-web/.next/
-web/dist/
-web/build/
+.next/
+out/
 
 # Data (large files — regenerated via `make data-all`)
 data/raw/
