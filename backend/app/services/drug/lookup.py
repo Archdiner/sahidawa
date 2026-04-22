@@ -13,10 +13,18 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 # __file__ = backend/app/services/drug/lookup.py
-# project root = 5 parents up
-_PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent.parent.parent
-DATA_DIR = _PROJECT_ROOT / "data" / "processed"
-RAW_DIR = _PROJECT_ROOT / "data" / "raw"
+# In Vercel: data lives inside backend/data/
+# Locally: data lives at project_root/data/
+_BACKEND_ROOT = Path(__file__).resolve().parent.parent.parent  # backend/
+_PROJECT_ROOT = _BACKEND_ROOT.parent  # project root
+
+# Prefer backend/data/ (Vercel), fall back to project_root/data/ (local dev)
+if (_BACKEND_ROOT / "data" / "processed").exists():
+    DATA_DIR = _BACKEND_ROOT / "data" / "processed"
+    RAW_DIR = _BACKEND_ROOT / "data" / "raw"
+else:
+    DATA_DIR = _PROJECT_ROOT / "data" / "processed"
+    RAW_DIR = _PROJECT_ROOT / "data" / "raw"
 
 
 @dataclass

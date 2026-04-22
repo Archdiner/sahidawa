@@ -1,0 +1,623 @@
+nppa_drug_name,salt_id,dosage_form,strength,ceiling_price_2026,drugs_matched_form,drugs_matched_exact,violations
+5-amino salicylic Acid (Mesalazine/Mesalamine),78fd4825-cbe3-4c5c-a354-ee55a9644af2,Suppository,500 mg,17.86,0,0,0
+5-amino salicylic Acid (Mesalazine/Mesalamine),78fd4825-cbe3-4c5c-a354-ee55a9644af2,Enema,(Foam),17.11,0,0,0
+5-amino salicylic Acid (Mesalazine/Mesalamine),78fd4825-cbe3-4c5c-a354-ee55a9644af2,Enema,(Liquid),2.17,0,0,0
+Abacavir,21e775cb-a617-4e1d-bade-849b9359d96a,Tablet,300 mg,49.76,8,3,1
+Abacavir (A) +Lamivudine(B),21e775cb-a617-4e1d-bade-849b9359d96a,Tablet,600mg (A) +300mg (B),74.06,8,5,4
+Acetazolamide,1a03fb5e-1d33-4373-8ea5-8aa5e6dd3597,Tablet,250mg,4.16,27,25,4
+Acetazolamide,1a03fb5e-1d33-4373-8ea5-8aa5e6dd3597,Capsule,250mg,5.17,4,3,1
+Acyclovir,8f19f33c-a0de-4ad4-9fdf-48c9b827dc8a,Tablet,400mg,13.99,226,84,7
+Acyclovir,8f19f33c-a0de-4ad4-9fdf-48c9b827dc8a,Tablet,200mg,7.79,226,62,5
+Acyclovir,8f19f33c-a0de-4ad4-9fdf-48c9b827dc8a,Injection,250 mg,436.64,40,14,0
+Acyclovir,8f19f33c-a0de-4ad4-9fdf-48c9b827dc8a,Injection,500 mg,541.14,40,25,3
+Acyclovir,8f19f33c-a0de-4ad4-9fdf-48c9b827dc8a,Tablet,800mg,38.57,226,77,4
+Acyclovir,8f19f33c-a0de-4ad4-9fdf-48c9b827dc8a,Ointment,3%,11.95,19,0,0
+Acyclovir,8f19f33c-a0de-4ad4-9fdf-48c9b827dc8a,Oral Liquid,400mg/5mL (p),1.39,0,0,0
+Adenosine,9a9e9948-4dba-4361-9958-812526f376d0,Injection,3mg/mL,95.09,11,5,2
+Adrenaline,da572979-efab-48e6-8c17-e10ab6f304d2,Injection,1mg/mL,12.52,8,5,5
+Albendazole,d9371beb-ae8e-4064-9237-ba79f5565086,Oral Liquid,200mg/5mL(p),1.83,0,0,0
+Albendazole,d9371beb-ae8e-4064-9237-ba79f5565086,Tablet,400mg,7.21,501,474,404
+Albendazole,d9371beb-ae8e-4064-9237-ba79f5565086,Tablet,400mg,8.32,501,474,332
+Allopurinol,8ecb9e3d-a7c4-4916-abcb-abc9533071a7,Tablet,300mg,5.77,156,56,16
+Allopurinol,8ecb9e3d-a7c4-4916-abcb-abc9533071a7,Tablet,100mg,1.93,156,97,64
+Alprostadil,cf305a87-085a-40ca-bcba-d3ffb3443d86,Injection,0.5mg/mL,6253.38,5,0,0
+Amikacin,2bab8024-1f03-47e6-b0f7-9acd3f0702ac,Injection,250mg/mL,55.47,1784,419,4
+Amiodarone,34e1c11e-20bb-4aca-af77-4829b645f9c8,Tablet,200mg,11.79,27,12,3
+Amiodarone,34e1c11e-20bb-4aca-af77-4829b645f9c8,Tablet,100mg,6.29,27,15,3
+Amiodarone,34e1c11e-20bb-4aca-af77-4829b645f9c8,Injection,50mg/mL,21.64,6,0,0
+Amitriptyline,c1b662c5-2224-4409-918f-f7fd3715585b,Tablet,50mg,6.13,588,29,5
+Amitriptyline,c1b662c5-2224-4409-918f-f7fd3715585b,Tablet,75mg,5.58,588,32,8
+Amitriptyline,c1b662c5-2224-4409-918f-f7fd3715585b,Tablet,25mg,2.55,588,225,88
+Amitriptyline,c1b662c5-2224-4409-918f-f7fd3715585b,Tablet,10mg,2.45,588,171,35
+Amlodipine,c6c3adc2-afcb-442e-9a55-e1e19a9155ca,Tablet,2.5mg,1.83,1405,147,78
+Amlodipine,c6c3adc2-afcb-442e-9a55-e1e19a9155ca,Tablet,5mg,2.56,1405,1137,827
+Amlodipine,c6c3adc2-afcb-442e-9a55-e1e19a9155ca,Tablet,10mg,5.58,1405,109,23
+Amoxicillin,527b2c82-0c4b-4b1f-a097-2beeafaa1075,Capsule,250mg,2.5,1514,924,819
+Amoxicillin,527b2c82-0c4b-4b1f-a097-2beeafaa1075,Capsule,500mg,7.54,1514,567,52
+Amoxicillin,527b2c82-0c4b-4b1f-a097-2beeafaa1075,Oral Liquid,250 mg/5 mL (p),1.6,0,0,0
+Amoxicillin,527b2c82-0c4b-4b1f-a097-2beeafaa1075,Injection,250 mg,25.38,641,64,44
+Amoxicillin,527b2c82-0c4b-4b1f-a097-2beeafaa1075,Injection,500 mg,55.96,641,37,27
+Amoxicillin,527b2c82-0c4b-4b1f-a097-2beeafaa1075,Oral Liquid,125 mg/5 mL (p),1.05,0,0,0
+Amoxicillin (A) + Clavulanic acid (B),527b2c82-0c4b-4b1f-a097-2beeafaa1075,Injection,500mg (A) + 100mg (B),103.78,641,37,4
+Amoxicillin (A) + Clavulanic acid (B),527b2c82-0c4b-4b1f-a097-2beeafaa1075,Syrup,125mg (A) + 31.25 (B)/5mL(p),2.1,1407,160,20
+Amoxicillin (A) + Clavulanic acid (B),527b2c82-0c4b-4b1f-a097-2beeafaa1075,Injection,1 g (A) +200mg (B),145.06,641,0,0
+Amoxicillin (A) +Clavulanic acid (B),527b2c82-0c4b-4b1f-a097-2beeafaa1075,Tablet,500 mg (A) + 125 mg (B),18.74,4193,2705,1250
+Amoxicillin (A) +Clavulanic acid (B),527b2c82-0c4b-4b1f-a097-2beeafaa1075,Oral Liquid,200 mg (A) + 28.5mg(B)/5 mL(p),2.07,0,0,0
+Amphotericin B,69aa5d55-fbb4-4a6c-8399-d52dc63e27cd,Injection,50mg/vial,232.86,26,21,20
+Ampicillin,54ec1577-fbc9-4ce8-8035-58ec13561315,Injection,500 mg,14.59,187,72,25
+Ampicillin,54ec1577-fbc9-4ce8-8035-58ec13561315,Injection,1 gm,25.51,187,27,17
+Arsenic Trioxide,f64d8702-a52d-4115-8fa4-1b8b8fc03c12,Injection,1mg/ml,31.27,3,0,0
+Artemether (A) + Lumefantrine(B),ce6b4c8a-f0bf-459e-99d3-092b9f68d612,Tablet,40 mg (A) + 240 mg (B),18.47,287,21,1
+Artemether (A) +Lumefantrine(B),ce6b4c8a-f0bf-459e-99d3-092b9f68d612,Tablet,80mg(A)+480mg(B),26.12,287,246,40
+Artemether (A) +Lumefantrine(B),ce6b4c8a-f0bf-459e-99d3-092b9f68d612,Tablet,20 mg (A) + 120 mg (B),12.95,287,19,4
+Artesunate,e103153a-cbc5-4105-a3d9-78cd9aea1a47,Injection,60 mg,250.61,411,338,0
+Artesunate,e103153a-cbc5-4105-a3d9-78cd9aea1a47,Injection,120mg,465.35,411,58,0
+Artesunate (A) + Sulphadoxine - Pyrimethamine (B),e103153a-cbc5-4105-a3d9-78cd9aea1a47,Tablet,,23.09,86,0,0
+Ascorbic acid (Vitamin C),9a2af528-2402-4107-bcc4-01375fd708b9,Tablet,100mg,0.24,9,3,3
+Atazanavir (A) +Ritonavir(B),52cca76f-a67b-48f8-be2b-0d4b24095c40,Tablet,300mg(A) + Tablet 100mg(B),102.23,5,5,0
+Atorvastatin,b2299b80-f79c-4755-9c31-1260c725b4e8,Tablet,40mg,19.77,2033,254,38
+Atorvastatin,b2299b80-f79c-4755-9c31-1260c725b4e8,Tablet,20mg,12.86,2033,576,121
+Atorvastatin,b2299b80-f79c-4755-9c31-1260c725b4e8,Tablet,80mg,41.56,2033,71,7
+Atorvastatin,b2299b80-f79c-4755-9c31-1260c725b4e8,Tablet,10mg,5.09,2033,1054,729
+Atracurium,8fd508f9-0214-449d-9ac8-cfaf3ae93f1b,Injection,10 mg/ml,17.39,28,7,7
+Atropine,41750a02-1dc3-4ad6-a506-f5c7e8b50a88,Drops,1%,4.04,0,0,0
+Atropine,41750a02-1dc3-4ad6-a506-f5c7e8b50a88,Ointment,1%,4.82,5,0,0
+Atropine,41750a02-1dc3-4ad6-a506-f5c7e8b50a88,Injection,0.6mg/mL,7.03,13,10,2
+Azathioprine,aa1ef34b-1d8b-4eaf-b282-94cff4e84eae,Tablet,50mg,11.53,53,53,1
+Azathioprine,aa1ef34b-1d8b-4eaf-b282-94cff4e84eae,Tablet,25mg(p),7.42,53,0,0
+Azithromycin,a4031d7c-7765-4de4-8e9b-268145df360a,Injection,500mg,209.63,34,33,1
+Azithromycin,a4031d7c-7765-4de4-8e9b-268145df360a,Tablet,500mg,24.14,3726,1998,129
+Azithromycin,a4031d7c-7765-4de4-8e9b-268145df360a,Oral Liquid,200 mg/5 mL (p),3.49,0,0,0
+Azithromycin,a4031d7c-7765-4de4-8e9b-268145df360a,Capsule,250mg,10.87,31,19,7
+Azithromycin,a4031d7c-7765-4de4-8e9b-268145df360a,Tablet,1000mg,59.17,3726,11,1
+Azithromycin,a4031d7c-7765-4de4-8e9b-268145df360a,Capsule,500mg,19.49,31,12,7
+Azithromycin,a4031d7c-7765-4de4-8e9b-268145df360a,Tablet,250mg,11.95,3726,1545,146
+Baclofen,dcbb4054-9501-472a-bae0-bf3f41786bf3,Tablet,20mg,16.67,155,36,15
+Baclofen,dcbb4054-9501-472a-bae0-bf3f41786bf3,Tablet,10mg,12.19,155,85,8
+Baclofen,dcbb4054-9501-472a-bae0-bf3f41786bf3,Tablet,5mg,6.52,155,7,1
+Benzoyl peroxide,965b048a-035a-4a8c-b41a-08fbaad6d4dc,Gel,2.5,3.7,54,0,0
+Benzoyl peroxide,965b048a-035a-4a8c-b41a-08fbaad6d4dc,Gel,5 %,8.16,54,0,0
+Benzoyl peroxide,965b048a-035a-4a8c-b41a-08fbaad6d4dc,Gel,3.5%,10.36,54,0,0
+Betamethasone,c432d265-6b61-42c6-a1c4-c0e6e01eb483,Injection,4mg/mL,4.85,29,28,3
+Bicalutamide,5a5a6c5e-45ca-4c77-818f-d3977a5467e2,Tablet,50mg,44.34,28,28,7
+Bisacodyl,a8806c49-c883-4add-a52f-951ca66aafbb,Tablet,5mg,1.2,33,28,3
+Bisacodyl,a8806c49-c883-4add-a52f-951ca66aafbb,Suppository,5mg,10.22,0,0,0
+Bleomycin,46c75c94-2063-46d7-ab64-7d9da5d986cc,Injection,15units,693.68,18,0,0
+Bortezomib,b2b7618d-123c-49e0-b0ae-a60fe2a28d40,Injection,2mg,5386.81,48,39,28
+Budesonide,f77c61d4-33f8-4350-95ab-62f6e0dba080,Solution,for use in nebulizer 0.5mg/mL,12.19,2,2,1
+Budesonide,f77c61d4-33f8-4350-95ab-62f6e0dba080,Solution,for use in nebulizer 1mg/mL,13.46,2,2,1
+Budesonide,f77c61d4-33f8-4350-95ab-62f6e0dba080,Inhalation,(MDI) 100 mcg/dose,1.44,0,0,0
+Budesonide,f77c61d4-33f8-4350-95ab-62f6e0dba080,Inhalation,(MDI) 200 mcg/dose,2.08,0,0,0
+Budesonide,f77c61d4-33f8-4350-95ab-62f6e0dba080,Inhalation,(DPI) 200 mcg/dose,3.41,0,0,0
+Budesonide,f77c61d4-33f8-4350-95ab-62f6e0dba080,Nasal Spray,100 mcg/dose,0.83,0,0,0
+Budesonide (A)+ Formoterol (B),f77c61d4-33f8-4350-95ab-62f6e0dba080,Inhalation,(DPI) 400 mcg (A) + 6 mcg (B),7.12,0,0,0
+Budesonide (A)+ Formoterol (B),f77c61d4-33f8-4350-95ab-62f6e0dba080,Inhalation,(MDI) 100 mcg (A) + 6 mcg (B),2.17,0,0,0
+Budesonide (A)+ Formoterol (B),f77c61d4-33f8-4350-95ab-62f6e0dba080,Inhalation,(DPI) 100 mcg (A) + 6 mcg (B),4.43,0,0,0
+Budesonide (A)+ Formoterol (B),f77c61d4-33f8-4350-95ab-62f6e0dba080,Inhalation,(DPI) 200 mcg (A) + 6 mcg (B),5.86,0,0,0
+Budesonide (A) + Formoterol (B),f77c61d4-33f8-4350-95ab-62f6e0dba080,Inhalation,(MDI) 200mcg (A) + 6mcg (B),3.03,0,0,0
+Budesonide (A) + Formoterol (B),f77c61d4-33f8-4350-95ab-62f6e0dba080,Inhalation,(MDI) 400mcg (A) + 6mcg (B),3.45,0,0,0
+Bupivacaine,c01cda42-7784-493e-a4fc-d9b0ebf6224e,Injection,0.5 % with 7.5 % glucose,7.57,27,0,0
+Bupivacaine,c01cda42-7784-493e-a4fc-d9b0ebf6224e,Injection,0.5 %,4.53,27,0,0
+Bupivacaine,c01cda42-7784-493e-a4fc-d9b0ebf6224e,Injection,0.25%,2.9,27,0,0
+Buprenorphine,ce764bbc-1bf1-4562-a10f-7be4f142ed34,Tablet,(Sub-lingual)0.4mg,9.65,7,5,1
+Buprenorphine (A) +Naloxone (B),ce764bbc-1bf1-4562-a10f-7be4f142ed34,Tablet,(Sub-lingual) 2mg(A)+0.5mg(B),37.86,7,2,1
+Buprenorphine (A) +Naloxone (B),ce764bbc-1bf1-4562-a10f-7be4f142ed34,Tablet,(Sub-lingual) 0.4mg(A)+0.1mg(B),12.11,7,5,1
+Caffeine,74678c96-3236-4fa9-847c-7c8cb7c05838,Oral Liquid,20 mg/mL,251.58,0,0,0
+Caffeine,74678c96-3236-4fa9-847c-7c8cb7c05838,Injection,20mg/mL,256.52,6,4,3
+Calamine,9490b140-4563-4a69-b3c2-5382d3ff1c8e,Lotion,(As per IP),0.98,15,0,0
+Capecitabine,5c3b57fa-7fed-4893-a4fd-4144b016addb,Tablet,500mg,115.43,57,53,33
+Carbamazepine,c503626b-bbce-475e-a55d-407a796d055f,Modified Release,– Tablet 200mg,2.46,0,0,0
+Carbamazepine,c503626b-bbce-475e-a55d-407a796d055f,Modified Release,– Tablet 400mg,4.77,0,0,0
+Carbamazepine,c503626b-bbce-475e-a55d-407a796d055f,Tablet,400mg,3.63,168,33,8
+Carbamazepine,c503626b-bbce-475e-a55d-407a796d055f,Tablet,200mg,1.61,168,88,26
+Carbamazepine,c503626b-bbce-475e-a55d-407a796d055f,Oral Liquid,100mg/5mL(p),0.32,0,0,0
+Carbamazepine,c503626b-bbce-475e-a55d-407a796d055f,Tablet,100mg,1.1,168,22,6
+Carbimazole,a34f24fb-5ee6-42b7-be3f-f7784120483f,Tablet,10mg,4.36,19,7,0
+Carbimazole,a34f24fb-5ee6-42b7-be3f-f7784120483f,Tablet,5mg,2.24,19,7,1
+Carbimazole,a34f24fb-5ee6-42b7-be3f-f7784120483f,Tablet,20mg,14.2,19,5,0
+Carboplatin,fe0f5380-e021-42c8-a5ec-6ee52910c4a7,Injection,10mg/mL,60.49,64,2,0
+Cefadroxil,417b0a61-24b8-4aae-b42e-ab46566e6d96,Tablet,500mg,6.87,428,153,42
+Cefadroxil,417b0a61-24b8-4aae-b42e-ab46566e6d96,Oral Liquid,125mg/5mL(p),0.69,0,0,0
+Cefixime,6b4c5eaa-cb14-4e99-9385-907056b5683b,Tablet,400mg,22.63,6885,38,17
+Cefixime,6b4c5eaa-cb14-4e99-9385-907056b5683b,Tablet,200mg,10.01,6885,5107,4309
+Cefixime,6b4c5eaa-cb14-4e99-9385-907056b5683b,Oral Liquid,50 mg/5 mL (p),1.67,0,0,0
+Cefixime,6b4c5eaa-cb14-4e99-9385-907056b5683b,Oral Liquid,100mg/5mL(p),2.45,0,0,0
+Cefixime,6b4c5eaa-cb14-4e99-9385-907056b5683b,Capsule,200mg,15.04,32,25,14
+Cefotaxime,04759f59-81f7-49a8-8db5-b900d1a667cb,Injection,250 mg,18.15,310,82,19
+Cefotaxime,04759f59-81f7-49a8-8db5-b900d1a667cb,Injection,500 mg,24.96,310,78,23
+Cefotaxime,04759f59-81f7-49a8-8db5-b900d1a667cb,Injection,1000mg,40.92,310,130,33
+Ceftazidime,52e7dac0-a65f-4984-a392-dfaa5dc21007,Injection,1000mg,232.47,689,424,271
+Ceftazidime,52e7dac0-a65f-4984-a392-dfaa5dc21007,Injection,250 mg,80.97,689,202,74
+Ceftriaxone,275cf76e-03e7-4323-ac4f-576aee28232b,Injection,500 mg,51.49,6121,1188,434
+Ceftriaxone,275cf76e-03e7-4323-ac4f-576aee28232b,Injection,250 mg,29.02,6121,1596,963
+Ceftriaxone,275cf76e-03e7-4323-ac4f-576aee28232b,Injection,1000mg,63.88,6121,3159,2102
+Ceftriaxone,275cf76e-03e7-4323-ac4f-576aee28232b,Injection,2000mg,141.43,6121,62,11
+Cefuroxime,61b92bda-8b78-4955-82a4-791dc5fc5f12,Oral Liquid,125mg/5mL(p),5.44,0,0,0
+Cefuroxime,61b92bda-8b78-4955-82a4-791dc5fc5f12,Tablet,500mg,52.67,2652,1631,548
+Cefuroxime,61b92bda-8b78-4955-82a4-791dc5fc5f12,Injection,1500 mg,346.9,430,218,18
+Cetirizine,5c6f2233-e191-4167-9f61-a361fb3946d2,Tablet,10mg,1.92,934,501,161
+Cetirizine,5c6f2233-e191-4167-9f61-a361fb3946d2,Oral Liquid,5mg/5mL(p),0.67,0,0,0
+Chlorambucil,40e268cf-187c-47a9-a067-5542b32756c4,Tablet,2 mg,31.91,7,3,2
+Chlorambucil,40e268cf-187c-47a9-a067-5542b32756c4,Tablet,5 mg,79.06,7,4,0
+Chloroquine,a9513208-35a0-44c5-96d1-2403a84b662f,Tablet,150 mg,1.36,76,0,0
+Chloroquine,a9513208-35a0-44c5-96d1-2403a84b662f,Oral Liquid,50mg/5mL,0.35,0,0,0
+Ciprofloxacin,f0ab78a4-fb1e-43e6-b5bf-5cb108482ca2,Tablet,250mg,2.25,1584,449,373
+Ciprofloxacin,f0ab78a4-fb1e-43e6-b5bf-5cb108482ca2,Tablet,500mg,4.35,1584,1077,877
+Ciprofloxacin,f0ab78a4-fb1e-43e6-b5bf-5cb108482ca2,Drops,0.3 %,1.58,43,0,0
+Ciprofloxacin,f0ab78a4-fb1e-43e6-b5bf-5cb108482ca2,Injection,200mg/100mL,0.2,7,1,0
+Ciprofloxacin,f0ab78a4-fb1e-43e6-b5bf-5cb108482ca2,Oral Liquid,250mg/5mL(p),0.75,0,0,0
+Ciprofloxacin,f0ab78a4-fb1e-43e6-b5bf-5cb108482ca2,Ointment,0.3%,1.32,10,0,0
+Cisplatin,8c86d474-d5d1-4066-9a99-ec106772240b,Injection,1mg/mL,7.26,36,2,1
+Clarithromycin,8374f59d-4862-4f81-98d5-400491e08650,Tablet,500mg,40.79,212,81,52
+Clarithromycin,8374f59d-4862-4f81-98d5-400491e08650,Tablet,250mg,24.64,212,115,43
+Clarithromycin,8374f59d-4862-4f81-98d5-400491e08650,Oral Liquid,125mg/5mL(p),4.76,0,0,0
+Clindamycin,cfbf9299-f2bc-4053-8848-b2aba12564eb,Capsule,150mg,16.75,207,22,2
+Clindamycin,cfbf9299-f2bc-4053-8848-b2aba12564eb,Capsule,300mg,29.05,207,115,6
+Clindamycin,cfbf9299-f2bc-4053-8848-b2aba12564eb,Tablet,300mg,19.43,35,15,10
+Clindamycin,cfbf9299-f2bc-4053-8848-b2aba12564eb,Injection,150mg/mL,62.05,141,24,13
+Clobazam,f0c9b011-8cff-4fa3-b081-03f66f83c6b0,Tablet,5mg,5.87,200,86,4
+Clobazam,f0c9b011-8cff-4fa3-b081-03f66f83c6b0,Tablet,10mg,10.08,200,90,5
+Clofazimine,aea051e4-97d0-4908-8cec-c738d0cb9ff2,Capsule,100mg,4.08,11,5,0
+Clofazimine,aea051e4-97d0-4908-8cec-c738d0cb9ff2,Capsule,50mg,2.16,11,6,0
+Clomipramine,6fab0784-eeab-48dc-839f-952f031f6540,Tablet,10 mg,2.92,98,15,2
+Clomipramine,6fab0784-eeab-48dc-839f-952f031f6540,Tablet,25 mg,6.37,98,31,1
+Clomipramine,6fab0784-eeab-48dc-839f-952f031f6540,Tablet,75 mg,16.86,98,20,1
+Clonazepam,8df95bc4-055d-48e8-b7c5-cdd5cca2f01f,Tablet,0.25mg,2.07,1456,1328,1068
+Clonazepam,8df95bc4-055d-48e8-b7c5-cdd5cca2f01f,Tablet,0.5mg,3.53,1456,1328,746
+Clonazepam,8df95bc4-055d-48e8-b7c5-cdd5cca2f01f,Tablet,1mg,4.88,1456,1328,627
+Clopidogrel,ae7d99ff-48d0-421c-88b9-7747e897cb0a,Tablet,75mg,6.82,211,194,31
+Clopidogrel,ae7d99ff-48d0-421c-88b9-7747e897cb0a,Tablet,150 mg,20.98,211,14,0
+Clotrimazole,2b376b80-fdfb-4cf9-933d-bab3e19a5c35,Lotion,1%,3.99,24,0,0
+Clotrimazole,2b376b80-fdfb-4cf9-933d-bab3e19a5c35,Pessary,100mg,10.25,0,0,0
+Clotrimazole,2b376b80-fdfb-4cf9-933d-bab3e19a5c35,Drops,1%,3.45,0,0,0
+Clotrimazole,2b376b80-fdfb-4cf9-933d-bab3e19a5c35,Cream,1%,3.07,108,0,0
+Cloxacillin,58c6686a-880d-4967-bb38-735cd1b7d2d7,Capsule,500mg,2.44,9,4,2
+Cloxacillin,58c6686a-880d-4967-bb38-735cd1b7d2d7,Capsule,250mg,1.44,9,5,4
+Clozapine,4b6753ff-613e-47c7-ac46-923db672cb75,Tablet,25mg,2.85,164,47,1
+Clozapine,4b6753ff-613e-47c7-ac46-923db672cb75,Tablet,50mg,5.31,164,49,4
+Clozapine,4b6753ff-613e-47c7-ac46-923db672cb75,Tablet,100 mg,8.66,164,55,6
+Colchicine,f8f831ac-483b-44aa-bfae-cdd80214f04f,Tablet,0.5mg,3.34,7,7,2
+Cyclophosphamide,fc442772-aca8-4d69-984e-d496226d0745,Injection,500mg,75.25,40,16,3
+Cyclophosphamide,fc442772-aca8-4d69-984e-d496226d0745,Tablet,50mg,3.81,8,8,1
+Cycloserine,84881917-9fa1-4ad3-88f7-f8cf9330b52f,Capsule,250mg,60.61,8,8,1
+Cycloserine,84881917-9fa1-4ad3-88f7-f8cf9330b52f,Tablet,250mg,47.11,2,2,0
+Dacarbazine,00622bd3-3481-4e90-83d1-fd85b347758d,Injection,200mg,390.91,31,13,6
+Dacarbazine,00622bd3-3481-4e90-83d1-fd85b347758d,Injection,500mg,531.29,31,13,13
+Daclatasvir,e3cbd43a-41ce-45e0-810b-857aa80db844,Tablet,60mg,204.77,17,16,6
+Dapsone,0ebbbda4-1b77-4c12-a71b-d896ea992532,Tablet,100 mg,0.42,1,1,0
+Darunavir,642fd2d7-3c8a-4846-b0ad-edad9ff31ed4,Tablet,600mg,158.15,8,4,3
+Darunavir (A) +Ritonavir (B),642fd2d7-3c8a-4846-b0ad-edad9ff31ed4,Tablet,600mg (A) + 100mg (B),149.98,8,4,3
+Dexamethasone,93cd7b9d-8007-488b-b8aa-d403a15709b8,Tablet,0.5mg,0.22,43,15,4
+Dexamethasone,93cd7b9d-8007-488b-b8aa-d403a15709b8,Tablet,4 mg,4.73,43,13,2
+Dexamethasone,93cd7b9d-8007-488b-b8aa-d403a15709b8,Injection,4mg/mL (2 ML),5.21,84,66,10
+Dexamethasone,93cd7b9d-8007-488b-b8aa-d403a15709b8,Injection,4mg/mL (5 ML),2.63,84,66,37
+Dexamethasone,93cd7b9d-8007-488b-b8aa-d403a15709b8,Injection,4mg/mL (Pack of 10ML),1.61,84,66,47
+Dexamethasone,93cd7b9d-8007-488b-b8aa-d403a15709b8,Injection,4mg/mL (Pack of 20 ML),1.38,84,66,49
+Dexamethasone,93cd7b9d-8007-488b-b8aa-d403a15709b8,Injection,4mg/mL (Pack of 30ML),0.93,84,66,66
+Diazepam,ec0535c5-89cf-4a53-8d99-816dfd32f2af,Tablet,5 mg,1.67,156,66,13
+Diazepam,ec0535c5-89cf-4a53-8d99-816dfd32f2af,Injection,5mg/mL,5.68,19,9,4
+Diazepam,ec0535c5-89cf-4a53-8d99-816dfd32f2af,Tablet,2 mg,1.48,156,64,33
+Diazepam,ec0535c5-89cf-4a53-8d99-816dfd32f2af,Suppository,5mg,6.34,0,0,0
+Diclofenac,5841d559-c2c7-48f8-a698-ef00819eca39,Tablet,50mg,2.1,3457,3208,2706
+Diclofenac,5841d559-c2c7-48f8-a698-ef00819eca39,Injection,25mg/mL,1.73,949,149,95
+Dicyclomine,70faf4ce-3bc0-4403-9f70-1614edfaa0c1,Injection,10mg/mL (Less than 10ML Pack),3.4,54,31,14
+Dicyclomine,70faf4ce-3bc0-4403-9f70-1614edfaa0c1,Injection,10mg/mL (10 ML & more pack)),2.15,54,31,18
+Diethylcarbamazine (DEC),aceb0e51-472f-4541-a28f-10c647764f38,Tablet,100mg,1.71,54,9,1
+Diethylcarbamazine (DEC),aceb0e51-472f-4541-a28f-10c647764f38,Tablet,50mg,0.57,54,1,0
+Diethylcarbamazine (DEC),aceb0e51-472f-4541-a28f-10c647764f38,Oral Liquid,120mg/5mL(p),0.49,0,0,0
+Digoxin,165fa63b-c133-4e47-988c-07c9c80ef37a,Tablet,0.25mg,1.36,12,12,0
+Digoxin,165fa63b-c133-4e47-988c-07c9c80ef37a,Oral Liquid,0.05mg/mL,1.51,0,0,0
+Digoxin,165fa63b-c133-4e47-988c-07c9c80ef37a,Injection,0.25mg/mL,3.97,2,2,2
+Diltiazem,46432295-5a19-49aa-99aa-e2c25cbba6a9,Tablet,60mg,5.6,116,33,4
+Diltiazem,46432295-5a19-49aa-99aa-e2c25cbba6a9,Tablet,30mg,2.75,116,44,3
+Diltiazem,46432295-5a19-49aa-99aa-e2c25cbba6a9,Injection,5mg/mL,3.58,1,1,0
+Diltiazem,46432295-5a19-49aa-99aa-e2c25cbba6a9,Modified Release,Capsule 180mg,26.89,0,0,0
+Dinoprostone,cee018a1-33f0-4b48-8b6f-56e37d2a79c8,Gel,0.5mg,86.75,4,4,1
+Dobutamine,ad371a59-9c1b-4ad7-b719-0319d324f13a,Injection,50 mg/ml,9.25,31,7,7
+Docetaxel,033b945e-2b5d-411c-a64c-d6719e039d10,Injection,20mg,2937.27,114,41,16
+Docetaxel,033b945e-2b5d-411c-a64c-d6719e039d10,Injection,80mg,10581.82,114,38,5
+Dolutegravir,95407a92-857f-40e1-b85f-c9f1e3f983eb,Tablet,50mg,115.5,4,4,2
+Domperidone,5febca09-7d34-480b-a211-4e89db74acce,Tablet,10mg,2.37,2736,2071,1851
+Domperidone,5febca09-7d34-480b-a211-4e89db74acce,Oral Liquid,1mg/mL,1.27,0,0,0
+Donepezil,65304c13-764f-4979-a4a1-51cdf0f13d11,Tablet,10mg,17.88,121,32,6
+Donepezil,65304c13-764f-4979-a4a1-51cdf0f13d11,Tablet,5mg,12.4,121,79,34
+Dopamine,c0dfab51-c7de-4e94-b0d0-cc29c4784609,Injection,40mg/mL,4.88,20,8,7
+Doxycycline,ed857d58-1b88-4a81-a0a3-d4825c23b383,Capsule,100mg,3.15,182,177,131
+Doxycycline,ed857d58-1b88-4a81-a0a3-d4825c23b383,Tablet,100mg,1.25,167,149,138
+Doxycycline,ed857d58-1b88-4a81-a0a3-d4825c23b383,Injection,100 mg,514.71,49,48,21
+Efavirenz,a19a3991-3649-451a-9147-45b5ec4d8457,Tablet,600mg,72.29,11,8,0
+Efavirenz,a19a3991-3649-451a-9147-45b5ec4d8457,Tablet,200 mg (p),23.08,11,3,1
+Efavirenz,a19a3991-3649-451a-9147-45b5ec4d8457,Capsule,200 mg,22.51,4,2,2
+Efavirenz,a19a3991-3649-451a-9147-45b5ec4d8457,Capsule,600 mg,57.03,4,2,2
+Enalapril,70e7d4e1-998a-4020-97d9-5d102540e584,Tablet,5mg,3.78,159,67,2
+Enalapril,70e7d4e1-998a-4020-97d9-5d102540e584,Tablet,2.5mg,2.24,159,43,3
+Enoxaparin,34d6f7ba-60dc-44d7-be19-53eee905c7c0,Injection,"40mg/0.4mL, Injection 60mg/0.6 ml",114.68,171,74,72
+Entecavir,3bb912ea-c4e6-44e6-9440-035c9c99a028,Tablet,1mg,133.37,28,28,0
+Entecavir,3bb912ea-c4e6-44e6-9440-035c9c99a028,Tablet,0.5mg,86.47,28,28,7
+Esmolol,3938183c-7497-4f49-8bde-6cf981a15689,Injection,10 mg/mL,27.01,5,0,0
+Ethambutol,85e0cdcb-3f17-4ec6-9f1a-a26674d371c6,Tablet,600mg,4.18,101,10,0
+Ethambutol,85e0cdcb-3f17-4ec6-9f1a-a26674d371c6,Tablet,800mg,5.08,101,56,0
+Ethambutol,85e0cdcb-3f17-4ec6-9f1a-a26674d371c6,Tablet,400mg,2.68,101,11,0
+Ethambutol,85e0cdcb-3f17-4ec6-9f1a-a26674d371c6,Tablet,200mg,1.17,101,6,0
+Ethionamide,8c536f8c-c128-4de3-bdcb-c472981a46ef,Tablet,250mg,15.17,14,14,2
+Etoposide,185cdb3c-b7f7-4d7c-88ef-8a881318519f,Capsule,50mg,57.99,7,5,0
+Etoposide,185cdb3c-b7f7-4d7c-88ef-8a881318519f,Injection,20mg/mL,35.34,25,2,1
+Fentanyl,d7e9ad36-85df-4767-a308-08eb96f686d0,Injection,50mcg/ml,21.46,6,0,0
+Filgrastim,09933e58-593b-46e5-b351-ba92d8c2a4c0,Injection,300mcg,1187.83,31,0,0
+Fluconazole,1bed7381-ed67-4be6-9933-3fe86b814238,Tablet,400mg,30.47,1264,64,22
+Fluconazole,1bed7381-ed67-4be6-9933-3fe86b814238,Tablet,200mg,17.88,1264,183,116
+Fluconazole,1bed7381-ed67-4be6-9933-3fe86b814238,Tablet,100mg,7.8,1264,10,7
+Fluconazole,1bed7381-ed67-4be6-9933-3fe86b814238,Tablet,150mg,12.35,1264,931,439
+Fluconazole,1bed7381-ed67-4be6-9933-3fe86b814238,Tablet,50mg,9.91,1264,56,15
+Fluconazole,1bed7381-ed67-4be6-9933-3fe86b814238,Capsule,200mg,41.08,99,13,2
+Fluconazole,1bed7381-ed67-4be6-9933-3fe86b814238,Capsule,150mg,19.68,99,69,28
+Fluconazole,1bed7381-ed67-4be6-9933-3fe86b814238,Injection,200mg/100mL,94.55,7,4,0
+Fluconazole,1bed7381-ed67-4be6-9933-3fe86b814238,Capsule,100mg,21.91,99,5,3
+Fludrocortisone,7711de10-5045-4e08-9040-799703ccad80,Tablet,0.1mg,13.52,3,0,0
+Flunarizine,34d976ec-d150-44c2-9dd3-6b704e704b4c,Tablet,5mg,2.54,319,103,52
+Flunarizine,34d976ec-d150-44c2-9dd3-6b704e704b4c,Tablet,10mg,4.93,319,215,24
+Fluoxetine,aabeddab-7fad-49d4-a18a-df39718cef61,Capsule,20 mg,4.09,176,117,11
+Fluoxetine,aabeddab-7fad-49d4-a18a-df39718cef61,Capsule,60 mg,11.36,176,21,0
+Fluoxetine,aabeddab-7fad-49d4-a18a-df39718cef61,Capsule,40 mg,6.64,176,21,1
+Fluoxetine,aabeddab-7fad-49d4-a18a-df39718cef61,Capsule,10 mg,3.4,176,17,0
+Fluoxetine,aabeddab-7fad-49d4-a18a-df39718cef61,Tablet,10 mg,2.85,208,14,2
+Fluoxetine,aabeddab-7fad-49d4-a18a-df39718cef61,Tablet,40 mg,5.7,208,19,3
+Fluoxetine,aabeddab-7fad-49d4-a18a-df39718cef61,Tablet,60 mg,8.44,208,15,5
+Fluoxetine,aabeddab-7fad-49d4-a18a-df39718cef61,Tablet,20 mg,4.25,208,154,90
+Fluphenazine,dba6e642-8908-4441-9692-909ddc484f63,Injection,25mg/mL,56.59,10,10,0
+Folic Acid,c68f5791-a913-41d3-aeeb-ba18c21de016,Tablet,5 mg,1.55,40,32,11
+Folic Acid,c68f5791-a913-41d3-aeeb-ba18c21de016,Capsule,5 mg,5.16,3,3,3
+Framycetin,f3006d71-b3c6-428f-9fc7-380c26e94d4f,Cream,1 %,1.7,4,0,0
+Furosemide,56336755-d9be-49af-83b2-a1beef005924,Tablet,40mg,0.94,48,18,13
+Furosemide,56336755-d9be-49af-83b2-a1beef005924,Injection,10mg/mL,3.06,6,5,0
+Furosemide,56336755-d9be-49af-83b2-a1beef005924,Oral Liquid,10mg/mL,3.4,0,0,0
+Fusidic acid,28b66b4f-18f0-4575-9b72-5d1c2c47212d,Cream,2 %,10.06,104,0,0
+Gefitinib,32d436c3-5ad7-4b53-8034-ddd5f66b12c5,Tablet,250mg,242.84,50,50,36
+Gemcitabine,f35e4f8b-ac46-4f1f-b86b-fe05751ce9d3,Injection,1000mg,5726.84,100,46,7
+Gemcitabine,f35e4f8b-ac46-4f1f-b86b-fe05751ce9d3,Injection,200 mg,1331.01,100,42,12
+Gentamicin,84c8916b-3a17-4995-aefd-32f967b792e7,Injection,40mg/mL (1.5 ml),2.97,89,31,14
+Gentamicin,84c8916b-3a17-4995-aefd-32f967b792e7,Injection,10mg/mL,2.47,89,5,4
+Gentamicin,84c8916b-3a17-4995-aefd-32f967b792e7,Injection,40mg/mL (Pack of 10ml),1.55,89,31,25
+Gentamicin,84c8916b-3a17-4995-aefd-32f967b792e7,Injection,40mg/mL (Pack of 20ml),1.59,89,31,25
+Gentamicin,84c8916b-3a17-4995-aefd-32f967b792e7,Injection,40mg/mL (Pack of 30ml),1.26,89,31,25
+Gentamicin,84c8916b-3a17-4995-aefd-32f967b792e7,Injection,40mg/mL (2ml),4.96,89,31,3
+Glimepiride,148d6b89-0f57-4ef4-8b7e-3b1b516cfdd4,Tablet,2mg,5.94,5100,2455,1640
+Glimepiride,148d6b89-0f57-4ef4-8b7e-3b1b516cfdd4,Tablet,1mg,3.78,5100,2254,1742
+Glycopyrrolate,2b313e4d-110d-4585-b474-b6340fafd8ab,Injection,0.2mg/mL,14.88,17,17,4
+Griseofulvin,a20cc71b-4cfb-4e9d-9eaa-2158cf1d906f,Tablet,250mg,1.81,73,34,15
+Haloperidol,0dab2862-807c-4148-96d3-bcd102911775,Tablet,5mg,3.65,236,83,6
+Haloperidol,0dab2862-807c-4148-96d3-bcd102911775,Tablet,10mg,4.89,236,54,4
+Haloperidol,0dab2862-807c-4148-96d3-bcd102911775,Oral Liquid,2mg/5mL,2.29,0,0,0
+Haloperidol,0dab2862-807c-4148-96d3-bcd102911775,Injection,5mg/mL,6.66,1,1,0
+Haloperidol,0dab2862-807c-4148-96d3-bcd102911775,Tablet,20mg,5.49,236,11,5
+Haloperidol,0dab2862-807c-4148-96d3-bcd102911775,Tablet,1.5mg,1.62,236,52,16
+Halothane,e3aa2a3a-8c1b-4a0d-b7e1-77d788c26d35,Liquid For Inhalation,,6.25,0,0,0
+Heparin,eb15f59b-d7d9-4210-acd2-c7803a903a27,Injection,1000IU/mL,21.72,67,0,0
+Heparin,eb15f59b-d7d9-4210-acd2-c7803a903a27,Injection,5000IU/mL,61.4,67,0,0
+Homatropine,07d00f17-cb5a-4038-bdbd-258c0730346c,Drops,2%,6.55,0,0,0
+Human normal immunoglobulin,1f22b251-ebff-4117-acec-f00ee7d8df8a,Solution,for infusion (16.5%),481.68,16,0,0
+Human normal immunoglobulin,1f22b251-ebff-4117-acec-f00ee7d8df8a,Solution,for infusion (10%),207.87,16,0,0
+Human normal immunoglobulin,1f22b251-ebff-4117-acec-f00ee7d8df8a,Solution,for infusion (5%),149.57,16,0,0
+Hydrochlorothiazide,182937fe-9cf8-43d1-84b1-d4ca1bf2d989,Tablet,25 mg,1.79,244,10,4
+Hydrochlorothiazide,182937fe-9cf8-43d1-84b1-d4ca1bf2d989,Tablet,12.5mg,1.07,244,234,226
+Hydrocortisone,9bb067ef-8731-49e5-a443-e6e345df8cfa,Injection,100mg,45.87,139,115,20
+Hydrocortisone,9bb067ef-8731-49e5-a443-e6e345df8cfa,Tablet,10mg,6.86,7,2,0
+Hydrocortisone,9bb067ef-8731-49e5-a443-e6e345df8cfa,Injection,200mg,67.17,139,17,4
+Hydrocortisone,9bb067ef-8731-49e5-a443-e6e345df8cfa,Tablet,5mg,3.19,7,1,0
+Hydrocortisone,9bb067ef-8731-49e5-a443-e6e345df8cfa,Tablet,20mg,15.25,7,2,0
+Hydroxychloroquine,1d3c2ec5-8c04-4e05-af20-5f9b1b263d82,Tablet,400mg,14.13,100,20,1
+Hydroxychloroquine,1d3c2ec5-8c04-4e05-af20-5f9b1b263d82,Tablet,200mg,6.51,100,68,10
+Hydroxyurea,985a9805-2e35-424e-83c4-30e71e28e618,Capsule,500mg,12.41,25,23,10
+Hyoscine butylbromide,af17dee6-d7fd-462a-b5b0-0a95c148335d,Injection,20 mg/ml,11.51,19,17,3
+Ibuprofen,63786a2b-6b2f-4caa-be1b-5dc29b9de6e4,Tablet,200mg,0.72,342,20,8
+Ibuprofen,63786a2b-6b2f-4caa-be1b-5dc29b9de6e4,Tablet,400mg,1.23,342,272,117
+Ibuprofen,63786a2b-6b2f-4caa-be1b-5dc29b9de6e4,Oral Liquid,100mg/5mL(p),0.22,0,0,0
+Ibuprofen,63786a2b-6b2f-4caa-be1b-5dc29b9de6e4,Capsule,400 mg,1.34,18,10,8
+Ifosfamide,abc8288a-4091-4d5c-8bcd-499bb07550ef,Injection,2000mg,658.6,15,6,3
+Ifosfamide,abc8288a-4091-4d5c-8bcd-499bb07550ef,Injection,1000mg,326.62,15,8,6
+Insulin Glargine,a9a7524a-3963-49a5-a984-5b652ea78a02,Injection,100 IU/ml,208.34,20,0,0
+Iohexol,d2cbb0ec-4119-45a5-92fa-c63e75235a0a,Injection,300mg iodine/mL,19.87,2,2,1
+Iohexol,d2cbb0ec-4119-45a5-92fa-c63e75235a0a,Injection,350mg iodine/mL,14.58,2,0,0
+Ipratropium,b1f10703-0ffa-45d4-b678-f331d271bf69,Solution,for use in nebulizer 250mcg/mL,2.98,2,0,0
+Iron sucrose,30e9ffa9-c39d-4c3e-8262-8f46fb1e5f7f,Injection,20mg/mL,58.79,392,78,14
+Isoflurane,ce08d9f1-4d1d-47aa-a132-f8521453381d,Liquid For Inhalation,,9.88,0,0,0
+Isoniazid,2db7b926-ac0a-4988-87cf-509600c32728,Tablet,100mg,0.74,117,16,15
+Isoniazid,2db7b926-ac0a-4988-87cf-509600c32728,Tablet,300mg,1.32,117,37,31
+Isosorbide dinitrate,304e355f-6b86-491c-bae1-b02817af3e1f,Tablet,5mg,0.84,22,3,1
+Isosorbide dinitrate,304e355f-6b86-491c-bae1-b02817af3e1f,Tablet,10mg,0.83,22,8,5
+Ispaghula,3351e5d5-85f5-4468-81bc-1b4caba5ddd4,Granules,/Husk/Powder,0.97,0,0,0
+Itraconazole,ec3a5f8a-5e17-4e28-93ef-e6fa286e8a4f,Oral Liquid,10mg/mL,5.06,0,0,0
+Itraconazole,ec3a5f8a-5e17-4e28-93ef-e6fa286e8a4f,Capsule,100mg,17.07,2377,1098,553
+Itraconazole,ec3a5f8a-5e17-4e28-93ef-e6fa286e8a4f,Capsule,200mg,22.65,2377,1224,970
+Ivermectin,a4a76009-9160-4316-8397-bc8851ac2a15,Tablet,6 mg,22.1,569,347,42
+Ivermectin,a4a76009-9160-4316-8397-bc8851ac2a15,Tablet,12 mg,38.27,569,199,16
+Ketamine,58fcdf0a-ed20-410e-a016-9b56aceb5f1c,Injection,50mg/mL,12.41,29,19,5
+Labetalol,6a01facc-f3c4-466e-8821-c139e8618664,Injection,5mg/mL,51.18,37,11,6
+Labetalol,6a01facc-f3c4-466e-8821-c139e8618664,Tablet,100 mg,15.52,46,39,7
+Lactulose,ca99ba41-db52-4594-8a47-70847fbe4481,Oral Liquid,10 g/15mL,1.26,0,0,0
+Lamivudine,56e2a7a0-f396-45e2-9328-33386c03cb51,Tablet,100mg,11.33,87,12,4
+Lamivudine,56e2a7a0-f396-45e2-9328-33386c03cb51,Tablet,150mg,11.12,87,55,38
+Latanoprost,ef4cfce5-19ab-42b5-bb29-2a5565566834,Drops,0.005%,238.17,0,0,0
+Lenalidomide,c714964e-ff1c-45eb-b5bb-b96937bce9a4,Capsule,5mg,68.86,53,12,7
+Lenalidomide,c714964e-ff1c-45eb-b5bb-b96937bce9a4,Capsule,25 mg,299.3,53,16,6
+Letrozole,13e73f00-815c-492a-a238-d74da4b5a4cf,Tablet,2.5mg,30.02,166,144,68
+Levetiracetam,16275623-8716-4ff5-b8f5-2f0eab6c3977,Tablet,250mg,6.45,456,108,21
+Levetiracetam,16275623-8716-4ff5-b8f5-2f0eab6c3977,Tablet,500mg,13.3,456,213,34
+Levetiracetam,16275623-8716-4ff5-b8f5-2f0eab6c3977,Modified Release,Tablet 750mg,18.74,0,0,0
+Levetiracetam,16275623-8716-4ff5-b8f5-2f0eab6c3977,Tablet,750mg,19.81,456,71,15
+Levetiracetam,16275623-8716-4ff5-b8f5-2f0eab6c3977,Oral Liquid,100 mg/mL (p),4.07,0,0,0
+Levetiracetam,16275623-8716-4ff5-b8f5-2f0eab6c3977,Injection,100mg/mL,23.57,51,28,5
+Levodopa (A) + Carbidopa (B),a6f9a64b-2c10-48bc-8694-d964b6fdf530,Modified Release,–Tablet 200mg (A) + 50mg (B),4.84,0,0,0
+Levodopa (A) +Carbidopa(B),a6f9a64b-2c10-48bc-8694-d964b6fdf530,Tablet,100 mg (A) + 25 mg (B),2.64,28,11,5
+Levodopa (A) +Carbidopa(B),a6f9a64b-2c10-48bc-8694-d964b6fdf530,Tablet,100 mg (A) + 10 mg (B),1.8,28,11,7
+Levodopa (A) +Carbidopa(B),a6f9a64b-2c10-48bc-8694-d964b6fdf530,Tablet,250mg(A) +25mg(B),4.53,28,8,1
+Levodopa (A) +Carbidopa(B),a6f9a64b-2c10-48bc-8694-d964b6fdf530,Modified Release,–Tablet 100 mg (A) + 25 mg (B),2.86,0,0,0
+Levofloxacin,9d9a71f0-55e8-46a1-86d7-0db787e58218,Tablet,750mg,12.75,2090,187,11
+Levofloxacin,9d9a71f0-55e8-46a1-86d7-0db787e58218,Tablet,250mg,4.93,2090,585,283
+Levofloxacin,9d9a71f0-55e8-46a1-86d7-0db787e58218,Tablet,500mg,9.21,2090,1308,80
+Levonorgestrel,0c7c22e6-77ff-4293-89f8-ec9ba75ce0c9,Tablet,1.5mg,77.16,19,17,9
+Linezolid,ca4567b9-f270-4b65-95cf-d1f0fea6775d,Tablet,600mg,36.53,411,401,120
+Linezolid,ca4567b9-f270-4b65-95cf-d1f0fea6775d,Tablet,300 mg,23.19,411,1,1
+Loperamide,4fab9ec9-a109-4a5d-bb89-bacea6f656b4,Tablet,2mg,2.34,56,54,2
+Loperamide,4fab9ec9-a109-4a5d-bb89-bacea6f656b4,Capsule,2mg,3.89,30,29,1
+Lopinavir (A) + Ritonavir(B),1610b748-dacc-4689-ae4f-2e1e4c803b5b,Tablet,200 mg (A) + 50mg (B),49.12,0,0,0
+Lorazepam,fe3e1cdf-8d96-45cd-b578-67f21883d0ea,Tablet,1 mg,2.37,217,99,5
+Lorazepam,fe3e1cdf-8d96-45cd-b578-67f21883d0ea,Tablet,2 mg,2.88,217,108,13
+Lorazepam,fe3e1cdf-8d96-45cd-b578-67f21883d0ea,Injection,2mg/mL,8.29,20,15,3
+Magnesium sulphate,51f9eca3-a1e8-4ed7-8116-e71e9ac6ed29,Injection,500mg/mL,4.98,4,0,0
+Mannitol,1905039f-b361-4c1a-b330-026563d1ed78,Injection,20 %,0.36,0,0,0
+Mannitol,1905039f-b361-4c1a-b330-026563d1ed78,Injection,10 %,0.19,0,0,0
+Mebendazole,8e601292-af5f-4293-8aa0-75fa47299fbe,Tablet,100 mg,2.97,24,18,3
+Mebendazole,8e601292-af5f-4293-8aa0-75fa47299fbe,Oral Liquid,100mg/5mL(p),0.86,0,0,0
+Medroxyprogesterone acetate,cba0764e-7379-40bc-826f-a4a630d0d9fe,Tablet,10 mg,6.4,68,54,0
+Medroxyprogesterone acetate,cba0764e-7379-40bc-826f-a4a630d0d9fe,Injection,150mg/mL,296.72,7,5,1
+Mefenamic acid,8e885686-d00b-4d2d-b4d0-cef1daf028d9,Oral Liquid,100mg/5mL(p),0.57,0,0,0
+Mefenamic acid,8e885686-d00b-4d2d-b4d0-cef1daf028d9,Tablet,250 mg,2.16,190,52,34
+Mefloquine,21858560-c8be-42cd-9a8a-543dc76d41f2,Tablet,250 mg,53.41,21,20,1
+Meglumine diatrizoate,b17abcae-ab04-4536-ad11-4c9dd82d4e4d,Injection,60%w/v,9.69,0,0,0
+Meglumine diatrizoate,b17abcae-ab04-4536-ad11-4c9dd82d4e4d,Injection,76%w/v,10.45,0,0,0
+Melphalan,d54e6fef-cc05-464d-99b4-5bb47e26b8f6,Tablet,2 mg,93.53,8,5,2
+Melphalan,d54e6fef-cc05-464d-99b4-5bb47e26b8f6,Tablet,5 mg,88.11,8,3,3
+Meropenem,94bb79a2-d504-4a0c-98a2-3a02f7ea7da6,Injection,500 mg (as trihydrate),740.38,1136,202,132
+Meropenem,94bb79a2-d504-4a0c-98a2-3a02f7ea7da6,Injection,1000mg (as trihydrate),975.62,1136,774,636
+Mesna,fc51b7fa-a5ef-4e5b-946d-1ea9c0d759fb,Injection,100mg/mL,15.88,13,3,3
+Metformin,1564124b-3941-47ef-88df-fa8a9c60510e,Tablet,1000mg,3.57,2169,566,418
+Metformin,1564124b-3941-47ef-88df-fa8a9c60510e,Tablet,500mg,2.07,2169,1498,1174
+Metformin,1564124b-3941-47ef-88df-fa8a9c60510e,Modified Release,Tablet 1000mg,4.15,0,0,0
+Methotrexate,9ddecef7-bcbe-4f5c-ba6d-1c82e1110d16,Tablet,10mg,13.61,126,16,4
+Methotrexate,9ddecef7-bcbe-4f5c-ba6d-1c82e1110d16,Tablet,2.5mg,5.44,126,31,1
+Methotrexate,9ddecef7-bcbe-4f5c-ba6d-1c82e1110d16,Tablet,5mg,9.65,126,27,0
+Methylergometrine,0960b159-2743-4dc0-a044-ab973fe44120,Tablet,0.125mg,9.16,41,40,3
+Methylergometrine,0960b159-2743-4dc0-a044-ab973fe44120,Injection,0.2mg/mL,15.31,37,36,15
+Methylprednisolone,3f3f1c97-6d83-4f0b-986c-24ec4f115b9d,Injection,40mg/mL,46.76,366,134,117
+Metoclopramide,396339c9-5152-47b3-9d6e-7227fbc9af21,Tablet,10mg,1.38,52,27,6
+Metoclopramide,396339c9-5152-47b3-9d6e-7227fbc9af21,Injection,5mg/mL (Less than 10ML Pack),2.74,19,14,1
+Metoclopramide,396339c9-5152-47b3-9d6e-7227fbc9af21,Injection,5mg/mL (10 ML & More Pack),1.67,19,14,6
+Metoclopramide,396339c9-5152-47b3-9d6e-7227fbc9af21,Oral Liquid,5mg/5mL(p),0.51,0,0,0
+Metronidazole,4925276e-708b-494e-b7bf-357b5f432c37,Tablet,200mg,0.84,92,24,9
+Metronidazole,4925276e-708b-494e-b7bf-357b5f432c37,Tablet,400mg,1.56,92,42,18
+Metronidazole,4925276e-708b-494e-b7bf-357b5f432c37,Injection,500mg/100mL,0.21,1,1,1
+Metronidazole,4925276e-708b-494e-b7bf-357b5f432c37,Oral Liquid,200mg/5mL(p),0.53,0,0,0
+Midazolam,5e33f3a4-05b7-435b-8448-79c02037161e,Nasal Spray,1.25mg/ actuation,222.02,0,0,0
+Midazolam,5e33f3a4-05b7-435b-8448-79c02037161e,Nasal Spray,0.5 mg/actuation,81.85,0,0,0
+Midazolam,5e33f3a4-05b7-435b-8448-79c02037161e,Injection,1mg/mL,6.06,30,16,8
+Midazolam,5e33f3a4-05b7-435b-8448-79c02037161e,Injection,5mg/mL,11.14,30,9,4
+Mifepristone,8a41c93d-8e6e-49d8-a1a3-b07f9b0e907a,Tablet,200mg,359.35,76,52,9
+Misoprostol,1e692af6-ab9d-450a-9718-5c9ee7c79fbb,Tablet,200mcg,19.43,51,0,0
+Misoprostol,1e692af6-ab9d-450a-9718-5c9ee7c79fbb,Tablet,100mcg,10.16,51,0,0
+Montelukast,d0673617-5470-4b98-ae96-ba0dd3af6adf,Tablet,5 mg (including chewable Tablets),12.3,983,40,2
+Montelukast,d0673617-5470-4b98-ae96-ba0dd3af6adf,Tablet,4 mg,10.48,983,31,4
+Montelukast,d0673617-5470-4b98-ae96-ba0dd3af6adf,Tablet,10 mg,16.84,983,904,129
+Morphine,1415cc27-3b54-4ade-95f0-808a5bc79705,Injection,10mg/mL,20.07,1,1,1
+Morphine,1415cc27-3b54-4ade-95f0-808a5bc79705,Injection,15mg/mL,15.29,1,0,0
+Moxifloxacin,5bb6f7a8-432a-4da8-80be-282f37144a19,Tablet,400mg,26.44,95,94,31
+Mupirocin,b489be5b-d093-46a8-8fe3-fb2c4864ab1d,Ointment,2%,20.77,186,0,0
+Mycophenolate mofetil,45e0bb0e-78e1-4253-94c7-c46b03c27e19,Tablet,500mg,76.38,73,57,14
+Mycophenolate mofetil,45e0bb0e-78e1-4253-94c7-c46b03c27e19,Tablet,250mg,50.79,73,10,0
+Naloxone,fd9d0c16-a50b-40b1-9153-e3ac162b6286,Injection,0.4mg/mL,94.95,5,0,0
+Natamycin,864adf38-16f9-480f-b05d-406255f9b1a3,Drops,5%,23.94,0,0,0
+Neostigmine,a199c664-8500-4987-80ed-70021e55b54e,Injection,0.5mg/mL,5.13,9,5,3
+Neostigmine,a199c664-8500-4987-80ed-70021e55b54e,Tablet,15mg,4.7,1,1,1
+Nevirapine,5f31460f-c1c4-48a1-affd-fc247308c423,Tablet,200 mg,16.17,9,7,0
+Nicotine (for nicotine replacement therapy),3508f3e4-102e-4c93-94c5-62915acdb30b,Lozenge,2mg,8.11,0,0,0
+Nicotine (for nicotine replacement therapy),3508f3e4-102e-4c93-94c5-62915acdb30b,Gum,2 mg,8.8,0,0,0
+Nicotine (for nicotine replacement therapy),3508f3e4-102e-4c93-94c5-62915acdb30b,Gum,4 mg,10.9,0,0,0
+Nicotine (for nicotine replacement therapy),3508f3e4-102e-4c93-94c5-62915acdb30b,Lozenge,4mg,9.98,0,0,0
+Nicotine (for nicotine replacement therapy),3508f3e4-102e-4c93-94c5-62915acdb30b,Oral Dosage Forms,2mg Pastille,7.29,0,0,0
+Nicotine (for nicotine replacement therapy),3508f3e4-102e-4c93-94c5-62915acdb30b,Oral Dosage Forms,4mg Pastille,8.02,0,0,0
+Nifedipine,32b58ba9-3441-439f-9f54-cecbfec61858,Tablet,10mg,1.58,61,22,5
+Nifedipine,32b58ba9-3441-439f-9f54-cecbfec61858,Capsule,10mg,0.98,14,6,0
+Nitrofurantoin,93520061-dd01-45d1-9090-fceab1c59aa8,Tablet,100 mg,8.3,124,120,40
+Nitrofurantoin,93520061-dd01-45d1-9090-fceab1c59aa8,Capsule,100 mg,8.85,10,9,5
+Nitrofurantoin,93520061-dd01-45d1-9090-fceab1c59aa8,Oral Liquid,25mg/5mL(p),0.92,0,0,0
+Norethisterone,08c79e93-0632-4678-bee3-4b3571753131,Tablet,5mg,5.52,236,161,17
+Omeprazole,6111ed01-37d8-4a10-914c-1dd18d523c63,Capsule,20 mg,2.94,1025,980,542
+Omeprazole,6111ed01-37d8-4a10-914c-1dd18d523c63,Tablet,20 mg,4.45,140,110,11
+Omeprazole,6111ed01-37d8-4a10-914c-1dd18d523c63,Capsule,10 mg,2.47,1025,22,4
+Omeprazole,6111ed01-37d8-4a10-914c-1dd18d523c63,Powder,20mg,1.55,1,0,0
+Omeprazole,6111ed01-37d8-4a10-914c-1dd18d523c63,Tablet,40 mg,8.66,140,4,1
+Omeprazole,6111ed01-37d8-4a10-914c-1dd18d523c63,Capsule,40 mg,5.81,1025,13,4
+Ondansetron,846d1c0e-4949-4384-a043-d0e4d04fde03,Tablet,4 mg,5.26,1170,1039,67
+Ondansetron,846d1c0e-4949-4384-a043-d0e4d04fde03,Oral Liquid,2mg/5mL(p),1.29,0,0,0
+Ondansetron,846d1c0e-4949-4384-a043-d0e4d04fde03,Injection,2mg/mL,6.1,648,464,338
+Ondansetron,846d1c0e-4949-4384-a043-d0e4d04fde03,Tablet,8 mg,9.28,1170,109,18
+Ormeloxifene (Centchroman),68a4d2f0-bee9-4a13-a3fb-16de00d8bcbe,Tablet,30mg,8.65,10,3,3
+Oxaliplatin,ecefbd7f-8e16-43ee-b5bc-13e8420b9ece,Injection,100mg(as licensed),5099.25,83,38,6
+Oxaliplatin,ecefbd7f-8e16-43ee-b5bc-13e8420b9ece,Injection,5 mg/mL in 10 mL vial,2287.59,83,0,0
+Oxytocin,de6375ad-69cf-4d4f-9f50-aabbb4d09dbe,Injection,5 IU/mL,18.27,26,0,0
+Oxytocin,de6375ad-69cf-4d4f-9f50-aabbb4d09dbe,Injection,10IU/mL,40.82,26,0,0
+Paclitaxel,98d2b9ba-5b46-4382-bbf1-b503035e04e2,Injection,"30 mg/5 mL, injection 100 mg/16.7 ml",220.61,133,26,21
+Pantoprazole,991978a3-9fd8-49ba-9e68-7b2c48975432,Injection,40mg,51.66,754,749,97
+Paracetamol,3e7b8f78-9cf9-458e-ae6c-496fb7a7cf1e,Tablet,650mg,2.05,1169,566,86
+Paracetamol,3e7b8f78-9cf9-458e-ae6c-496fb7a7cf1e,Oral Liquid,125 mg/5 mL (p),0.38,0,0,0
+Paracetamol,3e7b8f78-9cf9-458e-ae6c-496fb7a7cf1e,Oral Liquid,250 mg/5 mL (p),0.68,0,0,0
+Paracetamol,3e7b8f78-9cf9-458e-ae6c-496fb7a7cf1e,Oral Liquid,120 mg/5 mL (p),0.62,0,0,0
+Paracetamol,3e7b8f78-9cf9-458e-ae6c-496fb7a7cf1e,Tablet,500mg,0.93,1169,405,274
+Paracetamol,3e7b8f78-9cf9-458e-ae6c-496fb7a7cf1e,Suppository,80mg,6.82,0,0,0
+Paracetamol,3e7b8f78-9cf9-458e-ae6c-496fb7a7cf1e,Suppository,170mg,8.14,0,0,0
+Paracetamol,3e7b8f78-9cf9-458e-ae6c-496fb7a7cf1e,Injection,150mg/mL (2ML),4.07,45,19,4
+Paracetamol,3e7b8f78-9cf9-458e-ae6c-496fb7a7cf1e,Injection,150mg/mL (100 ML),1.64,45,19,16
+Permethrin,4db1f49d-ba2c-4189-8fbe-b4c3785f6be1,Cream,5%,1.89,87,0,0
+Permethrin,4db1f49d-ba2c-4189-8fbe-b4c3785f6be1,Lotion,1%,1.03,146,0,0
+Permethrin,4db1f49d-ba2c-4189-8fbe-b4c3785f6be1,Cream,1%,1.54,87,0,0
+Permethrin,4db1f49d-ba2c-4189-8fbe-b4c3785f6be1,Lotion,5%,1.03,146,0,0
+Permethrin,4db1f49d-ba2c-4189-8fbe-b4c3785f6be1,Gel,5%,1.34,2,0,0
+Pheniramine,8918f2b3-9d0e-428d-828b-e26ea44fdabd,Injection,22.75mg/mL (2ml),2.83,10,8,2
+Pheniramine,8918f2b3-9d0e-428d-828b-e26ea44fdabd,Injection,22.75mg/mL (10ml),2.11,10,8,4
+Phenobarbitone,b367799c-6734-49bc-a07b-2e6041a93500,Tablet,30mg,1.34,60,28,10
+Phenobarbitone,b367799c-6734-49bc-a07b-2e6041a93500,Tablet,60mg,1.93,60,14,3
+Phenobarbitone,b367799c-6734-49bc-a07b-2e6041a93500,Injection,200mg/mL,22.68,4,3,0
+Phenobarbitone,b367799c-6734-49bc-a07b-2e6041a93500,Oral Liquid,20mg/5mL (p),0.5,0,0,0
+Phenytoin,115629ff-f13f-41fc-8760-c0947eacf58b,Tablet,300mg,5.62,74,14,2
+Phenytoin,115629ff-f13f-41fc-8760-c0947eacf58b,Injection,50mg/mL,6.09,14,11,4
+Phenytoin,115629ff-f13f-41fc-8760-c0947eacf58b,Modified Release,Tablet 300mg,6.72,0,0,0
+Phenytoin,115629ff-f13f-41fc-8760-c0947eacf58b,Tablet,100mg,1.8,74,48,6
+Phenytoin,115629ff-f13f-41fc-8760-c0947eacf58b,Tablet,50mg,0.86,74,7,0
+Phenytoin,115629ff-f13f-41fc-8760-c0947eacf58b,Oral Liquid,30mg/5 mL(p),0.36,0,0,0
+Phenytoin,115629ff-f13f-41fc-8760-c0947eacf58b,Oral Liquid,125mg/5mL(p),1.13,0,0,0
+Phenytoin,115629ff-f13f-41fc-8760-c0947eacf58b,Capsule,300mg,4.76,5,1,1
+Phenytoin,115629ff-f13f-41fc-8760-c0947eacf58b,Capsule,100mg,1.87,5,2,0
+Phytomenadione (Vitamin K1),76a285d7-9ebd-47b8-bce8-a6b42a62d9c5,Injection,10mg/mL,54.36,12,4,1
+Phytomenadione (Vitamin K1),76a285d7-9ebd-47b8-bce8-a6b42a62d9c5,Tablet,10mg,14.89,2,0,0
+Pilocarpine,38eee036-06a7-46e8-97de-1ba82f913aba,Drops,2 %,16.64,0,0,0
+Piperacillin (A) +Tazobactam(B),9b3b8e07-81ad-4697-acb3-44142a8c658e,Injection,1000mg(A)+125mg(B),102.05,917,63,34
+Piperacillin (A) +Tazobactam(B),9b3b8e07-81ad-4697-acb3-44142a8c658e,Injection,2000mg(A)+250mg(B),196.15,917,79,47
+Piperacillin (A) +Tazobactam(B),9b3b8e07-81ad-4697-acb3-44142a8c658e,Injection,4000mg(A)+500mg(B),409.0,917,768,327
+Potassium chloride,2c59611a-d1cd-4f23-948e-21586f88fe77,Oral Liquid,500mg/5mL,0.31,0,0,0
+Potassium chloride,2c59611a-d1cd-4f23-948e-21586f88fe77,Injection,150mg/mL,2.46,10,3,1
+Povidone iodine,e8e2dbda-0e31-4ad2-a5f2-d9348c8f8cdf,Solution,5%,0.45,80,0,0
+Povidone iodine,e8e2dbda-0e31-4ad2-a5f2-d9348c8f8cdf,Solution,7.5%,0.84,80,0,0
+Povidone iodine,e8e2dbda-0e31-4ad2-a5f2-d9348c8f8cdf,Solution,10%,0.99,80,0,0
+Povidone iodine,e8e2dbda-0e31-4ad2-a5f2-d9348c8f8cdf,Solution,4%,1.78,80,0,0
+Povidone iodine,e8e2dbda-0e31-4ad2-a5f2-d9348c8f8cdf,Ointment,10%,6.3,166,0,0
+Prednisolone,657cd21b-7de9-4451-bf62-72a713959663,Tablet,40mg,3.49,109,9,1
+Prednisolone,657cd21b-7de9-4451-bf62-72a713959663,Oral Liquid,5mg/5mL(p),0.5,0,0,0
+Prednisolone,657cd21b-7de9-4451-bf62-72a713959663,Oral Liquid,15mg/5mL(p),0.88,0,0,0
+Prednisolone,657cd21b-7de9-4451-bf62-72a713959663,Tablet,10mg,1.23,109,34,10
+Prednisolone,657cd21b-7de9-4451-bf62-72a713959663,Tablet,5mg,0.69,109,34,14
+Prednisolone,657cd21b-7de9-4451-bf62-72a713959663,Tablet,20mg,2.46,109,19,2
+Prednisolone,657cd21b-7de9-4451-bf62-72a713959663,Drops,1%,5.9,1,0,0
+Primaquine,96fc830e-ba0e-4fb0-bdbe-6f3fad8f1d4c,Tablet,7.5mg,2.44,42,19,3
+Primaquine,96fc830e-ba0e-4fb0-bdbe-6f3fad8f1d4c,Tablet,15mg,5.26,42,19,1
+Primaquine,96fc830e-ba0e-4fb0-bdbe-6f3fad8f1d4c,Tablet,2.5mg,1.79,42,3,1
+Proparacaine,3d057006-2fa4-4c0c-af53-772f3b7bb915,Eye Drop,s0.5%,10.5,0,0,0
+Propofol,19dcdde6-0485-4a0c-9c7f-1890f3dca12e,Injection,10mg/mL,6.65,23,14,12
+Propranolol,a6dedc2e-06b7-4ee6-a065-302266f96de3,Tablet,40mg,3.3,341,197,131
+Propranolol,a6dedc2e-06b7-4ee6-a065-302266f96de3,Tablet,10mg,1.34,341,49,6
+Propranolol,a6dedc2e-06b7-4ee6-a065-302266f96de3,Tablet,20mg,3.28,341,73,10
+Propranolol,a6dedc2e-06b7-4ee6-a065-302266f96de3,Capsule,40mg,4.35,66,49,35
+Propranolol,a6dedc2e-06b7-4ee6-a065-302266f96de3,Capsule,20 mg,2.41,66,3,2
+Propranolol,a6dedc2e-06b7-4ee6-a065-302266f96de3,Capsule,10 mg,2.04,66,1,1
+Pyrazinamide,6090f67f-d34a-4652-a50f-8e932f54aeca,Tablet,1000mg,10.78,80,9,0
+Pyrazinamide,6090f67f-d34a-4652-a50f-8e932f54aeca,Tablet,500mg,5.01,80,21,1
+Pyrazinamide,6090f67f-d34a-4652-a50f-8e932f54aeca,Tablet,750mg,7.39,80,39,1
+Pyrazinamide,6090f67f-d34a-4652-a50f-8e932f54aeca,Tablet,1500mg,12.1,80,2,0
+Quinine,a81fc90f-29c9-414e-95dc-f05ebf58222e,Tablet,300 mg,5.79,138,86,16
+Quinine,a81fc90f-29c9-414e-95dc-f05ebf58222e,Injection,300 mg/mL,9.73,24,13,3
+Raltegravir,44acb9b5-9b56-4142-9e43-b99969c07529,Tablet,400mg,151.35,2,2,0
+Ramipril,e9c76bf2-f1e2-4c9b-bcdf-175bf18904f0,Tablet,2.5 mg,5.33,452,184,55
+Ramipril,e9c76bf2-f1e2-4c9b-bcdf-175bf18904f0,Tablet,5mg,8.37,452,195,46
+Ramipril,e9c76bf2-f1e2-4c9b-bcdf-175bf18904f0,Capsule,2.5mg,4.77,83,27,12
+Ramipril,e9c76bf2-f1e2-4c9b-bcdf-175bf18904f0,Capsule,5mg,7.37,83,31,14
+Ribavirin,28e9a793-1a34-46b5-a99f-4f8f592c15e8,Capsule,200 mg,27.13,14,12,10
+Rifampicin,bf15ec31-6439-4578-b6d2-8972c1d4abbc,Capsule,600mg,11.64,58,2,1
+Rifampicin,bf15ec31-6439-4578-b6d2-8972c1d4abbc,Capsule,450mg,5.81,58,37,10
+Rifampicin,bf15ec31-6439-4578-b6d2-8972c1d4abbc,Capsule,150mg,2.35,58,4,1
+Rifampicin,bf15ec31-6439-4578-b6d2-8972c1d4abbc,Capsule,300mg,4.72,58,13,0
+Rifampicin,bf15ec31-6439-4578-b6d2-8972c1d4abbc,Tablet,300 mg,3.72,174,8,4
+Rifampicin,bf15ec31-6439-4578-b6d2-8972c1d4abbc,Oral Liquid,100mg/5mL(p),0.48,0,0,0
+Risperidone,c5831b0f-7aa5-4fd3-80e1-5a5b7a105491,Tablet,1 mg,3.1,493,101,9
+Risperidone,c5831b0f-7aa5-4fd3-80e1-5a5b7a105491,Tablet,2 mg,4.59,493,159,32
+Risperidone,c5831b0f-7aa5-4fd3-80e1-5a5b7a105491,Tablet,4 mg,7.54,493,94,15
+Risperidone,c5831b0f-7aa5-4fd3-80e1-5a5b7a105491,Oral Liquid,1mg/mL,2.26,0,0,0
+Risperidone,c5831b0f-7aa5-4fd3-80e1-5a5b7a105491,Injection,(Long acting) 25mg,1976.65,5,2,1
+Risperidone,c5831b0f-7aa5-4fd3-80e1-5a5b7a105491,Injection,(Long acting) 37.5 mg,2713.03,5,1,1
+Ritonavir,2e6ba570-177a-41fa-b50e-141048251a71,Tablet,100mg,29.91,12,4,0
+Rituximab,acaa2e60-45b9-494a-9e8a-229e8a7c533a,Injection,10mg/mL,780.1,31,0,0
+Salbutamol,84a0990b-5f0c-40fe-ab09-600f31fe3da8,Tablet,4 mg,0.33,73,25,21
+Salbutamol,84a0990b-5f0c-40fe-ab09-600f31fe3da8,Tablet,2 mg,0.27,73,42,28
+Salbutamol,84a0990b-5f0c-40fe-ab09-600f31fe3da8,Solution,(Solution for Nebulizer 5mg/mL),1.05,5,2,0
+Salbutamol,84a0990b-5f0c-40fe-ab09-600f31fe3da8,Oral Liquid,2mg/5mL,0.18,0,0,0
+Salbutamol,84a0990b-5f0c-40fe-ab09-600f31fe3da8,Inhalation,(MDI/DPI) 100mcg/dose,0.5,0,0,0
+Salicylic acid,4aa16718-6d0a-4398-ad4c-854d308d658a,Ointment,6%,2.07,27,0,0
+Sevoflurane,fc38b504-598d-4fe8-a3f9-c3d3ea156d11,Liquid For Inhalation,,31.92,0,0,0
+Sodium bicarbonate,a4b147c7-a688-4f82-9487-3dd7ef8825f5,Injection,(as per IP) - 8.4%,1.38,3,0,0
+Sodium bicarbonate,a4b147c7-a688-4f82-9487-3dd7ef8825f5,Injection,(as per IP) - 7.5%,1.04,3,0,0
+Sodium Valproate,955f2df4-ae22-49dd-8c71-d26752560d5c,Tablet,300mg,4.57,349,34,21
+Sodium Valproate,955f2df4-ae22-49dd-8c71-d26752560d5c,Oral Liquid,200mg/5mL(p),0.66,0,0,0
+Sodium Valproate,955f2df4-ae22-49dd-8c71-d26752560d5c,Tablet,200mg,3.67,349,129,84
+Sodium Valproate,955f2df4-ae22-49dd-8c71-d26752560d5c,Modified Release,– Tablet 500mg,9.5,0,0,0
+Sodium Valproate,955f2df4-ae22-49dd-8c71-d26752560d5c,Tablet,500mg,8.31,349,37,14
+Sodium Valproate,955f2df4-ae22-49dd-8c71-d26752560d5c,Modified Release,– Tablet 300mg,6.25,0,0,0
+Sodium Valproate,955f2df4-ae22-49dd-8c71-d26752560d5c,Injection,100mg/mL,6.91,6,5,2
+Sofosbuvir,8cc5c727-8494-4cef-9e41-b5b2fee705e4,Tablet,400mg,537.73,26,26,24
+Somatostatin,d9a92d43-76ed-4a4a-b285-e8395ad5b543,Injection,3mg,1391.63,9,0,0
+Spironolactone,0789e7fe-eaa8-45e8-80a1-20eaf68f0c4d,Tablet,50mg,4.48,100,76,48
+Spironolactone,0789e7fe-eaa8-45e8-80a1-20eaf68f0c4d,Tablet,25mg,2.24,100,18,12
+Streptokinase,797575ad-91b0-4d15-a8fb-a833436d616f,Injection,"15,00,000IU",1922.41,28,0,0
+Streptomycin,0bb90e22-ba83-447f-b04b-0911f3d723cf,Injection,750 mg,15.51,3,1,0
+Streptomycin,0bb90e22-ba83-447f-b04b-0911f3d723cf,Injection,1000mg,16.68,3,2,0
+Sulfasalazine,c85c8cf5-7735-4f32-800b-ced8368f6285,Tablet,500 mg,4.83,32,21,11
+Sumatriptan,7986f3bc-bd53-4422-b97a-c77a23d4a3e1,Tablet,25mg,33.28,27,6,1
+Sumatriptan,7986f3bc-bd53-4422-b97a-c77a23d4a3e1,Tablet,50mg,57.02,27,5,1
+Tacrolimus,26a38db7-efb6-46ed-8603-baaf27ee40e0,Capsule,0.5mg,21.16,143,105,66
+Tacrolimus,26a38db7-efb6-46ed-8603-baaf27ee40e0,Capsule,1mg,41.6,143,105,6
+Tacrolimus,26a38db7-efb6-46ed-8603-baaf27ee40e0,Capsule,2mg,86.37,143,27,3
+Tacrolimus,26a38db7-efb6-46ed-8603-baaf27ee40e0,Tablet,1mg,40.94,6,4,0
+Tacrolimus,26a38db7-efb6-46ed-8603-baaf27ee40e0,Tablet,2mg,79.55,6,0,0
+Tacrolimus,26a38db7-efb6-46ed-8603-baaf27ee40e0,Tablet,0.5mg,21.47,6,4,2
+Tamoxifen,6334cd5e-e3ff-41ee-b129-0276be98ad14,Tablet,20mg,3.02,42,20,6
+Tamoxifen,6334cd5e-e3ff-41ee-b129-0276be98ad14,Tablet,10mg,2.26,42,21,9
+Telmisartan,65261564-83ee-40ff-8a65-1cca3740a3cd,Tablet,20mg,3.98,3994,314,74
+Telmisartan,65261564-83ee-40ff-8a65-1cca3740a3cd,Tablet,40mg,6.92,3994,3194,1791
+Telmisartan,65261564-83ee-40ff-8a65-1cca3740a3cd,Tablet,80mg,10.65,3994,476,250
+Temozolomide,45553041-0113-4d47-97e8-e116c785adeb,Capsule,20 mg,451.93,93,30,10
+Temozolomide,45553041-0113-4d47-97e8-e116c785adeb,Capsule,250mg,4407.35,93,32,1
+Temozolomide,45553041-0113-4d47-97e8-e116c785adeb,Capsule,100mg,1544.93,93,30,19
+Temozolomide,45553041-0113-4d47-97e8-e116c785adeb,Tablet,20 mg,344.73,11,0,0
+Temozolomide,45553041-0113-4d47-97e8-e116c785adeb,Tablet,250 mg,3848.39,11,5,0
+Tenecteplase,042778d5-29a6-4824-ad54-cd326d7a4066,Injection,40mg/vial,51599.62,9,5,0
+Tenecteplase,042778d5-29a6-4824-ad54-cd326d7a4066,Injection,30mg/vial,37796.29,9,2,0
+Teneligliptin,534be131-86ab-4d2d-b5bf-6ac7b1feddec,Tablet,20mg,11.35,343,341,66
+Terbinafine,7221295d-ba1b-4868-a1ba-eb42dd6038fb,Cream,1%,5.38,277,0,0
+Tetanus toxoid,345b73e2-bf35-4bf8-befe-1daf97f47d12,As Licensed,(5ml),26.14,0,0,0
+Tetanus toxoid,345b73e2-bf35-4bf8-befe-1daf97f47d12,As Licensed,(0.5ml),12.77,0,0,0
+Thalidomide,0b7de09d-6d39-4bf2-9211-696209f8d9a5,Capsule,50 mg,31.91,27,12,6
+Thalidomide,0b7de09d-6d39-4bf2-9211-696209f8d9a5,Capsule,100mg,63.5,27,14,4
+Timolol,c3f02da5-1fd2-4a88-8d1c-4dd8eba8c6a3,Drops,0.5 %,13.72,0,0,0
+Tiotropium,48120f10-2d79-447d-b2b1-426dc4f49748,Inhalation,(MDI) 9 mcg/dose,2.85,0,0,0
+Tiotropium,48120f10-2d79-447d-b2b1-426dc4f49748,Inhalation,(DPI) 18mcg/dose,10.97,0,0,0
+Tramadol,9f050da9-726c-483c-a8ca-63cab61f547a,Injection,50mg/mL (upto 2ml pack),12.07,408,192,73
+Tramadol,9f050da9-726c-483c-a8ca-63cab61f547a,Capsule,50mg,4.93,54,48,26
+Tramadol,9f050da9-726c-483c-a8ca-63cab61f547a,Capsule,100mg,9.26,54,3,1
+Tramadol,9f050da9-726c-483c-a8ca-63cab61f547a,Tablet,50mg,9.93,605,159,4
+Tramadol,9f050da9-726c-483c-a8ca-63cab61f547a,Tablet,100mg,25.07,605,58,3
+Tranexamic acid,9aa24687-498b-43f3-88e6-862659f05c04,Injection,100 mg/mL,14.04,173,48,12
+Tranexamic acid,9aa24687-498b-43f3-88e6-862659f05c04,Tablet,500 mg,18.98,662,471,106
+Trastuzumab,ab8e9faa-33d1-4b58-b46d-d0c18cff87e5,Injection,440mg/50mL,56039.24,26,13,3
+Trihexyphenidyl,8a72accc-495a-4456-9470-7e34b5aefbd8,Tablet,2mg,1.4,116,88,19
+Tropicamide,dd4adb4e-ce11-460d-996c-57fa337738bf,Eye Drop,1 %,9.65,0,0,0
+Valganciclovir,6dc8e93b-cf14-478a-8fe9-8096727fe607,Tablet,450 mg,418.08,27,27,7
+Vancomycin,31186723-d1cd-4586-9182-ba57403e760f,Injection,500 mg,325.27,123,80,20
+Vancomycin,31186723-d1cd-4586-9182-ba57403e760f,Injection,1000mg,481.56,123,40,16
+Vancomycin,31186723-d1cd-4586-9182-ba57403e760f,Injection,250 mg,257.28,123,3,0
+Vancomycin,31186723-d1cd-4586-9182-ba57403e760f,Capsule,250 mg,156.05,3,3,1
+Vecuronium,62b29601-b1b8-46d9-8651-57d257c85955,Injection,10mg,120.19,38,19,7
+Vecuronium,62b29601-b1b8-46d9-8651-57d257c85955,Injection,4 mg,76.18,38,16,7
+Verapamil,ae7afed0-1cd4-4085-b01c-51a4c9b2eb77,Tablet,80 mg,1.63,14,6,1
+Verapamil,ae7afed0-1cd4-4085-b01c-51a4c9b2eb77,Tablet,40mg,0.88,14,5,1
+Vincristine,900c2e68-b92d-4412-9c76-2552db3b38b0,Injection,1mg/mL,58.9,16,15,4
+Vitamin A,30a5675d-08ee-4ceb-bc24-9a54003aa628,Tablet,50000IU (including Chewable Tablet),0.74,1,0,0
+Vitamin A,30a5675d-08ee-4ceb-bc24-9a54003aa628,Injection,50000IU/mL,2.31,4,0,0
+Warfarin,0e02df07-ac92-44ff-ba39-0deed2312f11,Tablet,5 mg,2.46,18,6,3
+Warfarin,0e02df07-ac92-44ff-ba39-0deed2312f11,Tablet,3 mg,3.26,18,2,1
+Warfarin,0e02df07-ac92-44ff-ba39-0deed2312f11,Tablet,2 mg,2.79,18,5,1
+Warfarin,0e02df07-ac92-44ff-ba39-0deed2312f11,Tablet,1 mg,2.52,18,3,1
+Xylometazoline,e338afc8-53d2-4312-8ea3-04d049752179,Drops,0.05 %,4.29,180,0,0
+Xylometazoline,e338afc8-53d2-4312-8ea3-04d049752179,Drops,0.1%,5.24,180,0,0
+Zidovudine,aa42aad7-721f-4998-8899-937adafe8146,Tablet,300 mg,13.92,15,10,7
+Zidovudine (A) +Lamivudine (B) +Nevirapine(C),aa42aad7-721f-4998-8899-937adafe8146,Tablet,300mg(A)+150mg(B)+200m g (c),21.64,15,10,3
+Zidovudine (A) +Lamivudine(B),aa42aad7-721f-4998-8899-937adafe8146,Tablet,300mg(A)+150mg(B),21.6,15,10,3
+Zoledronic acid,42612ee4-4ac2-4b07-8441-4bda3dbad251,Injection,4mg,2449.49,37,35,22
+Zolpidem,3df2a584-aad6-485e-a6d2-cfa7ae0593d4,Tablet,5mg,6.36,193,62,3
+Zolpidem,3df2a584-aad6-485e-a6d2-cfa7ae0593d4,Tablet,10mg,8.72,193,101,10
