@@ -1,9 +1,15 @@
+from pathlib import Path
+
 from pydantic_settings import BaseSettings, SettingsConfigDict
+
+# Look for .env in project root (parent of backend/)
+_PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent.parent
+_ENV_FILE = _PROJECT_ROOT / ".env"
 
 
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(
-        env_file=".env",
+        env_file=str(_ENV_FILE),
         env_file_encoding="utf-8",
         extra="ignore",
     )
@@ -39,6 +45,10 @@ class Settings(BaseSettings):
 
     # Google Maps
     google_maps_api_key: str = ""
+
+    # Supabase
+    supabase_url: str = ""
+    supabase_secret_key: str = ""
 
     @property
     def whatsapp_api_url(self) -> str:

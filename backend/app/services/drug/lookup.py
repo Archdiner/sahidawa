@@ -137,76 +137,133 @@ class DrugLookupService:
 
         self._loaded = True
 
-    def search(self, query: str) -> list[dict]:
+    def search(
+        self, query: str, salt_hint: str | None = None, limit: int = 100
+    ) -> list[dict]:
         """Search for drugs matching the query string.
 
         Returns results scored by relevance:
         - Exact full name match scores highest
         - First-word match next
-        - Substring/salt match last
+        - Salt name match next
+        - Substring match last (with strict guards)
+
+        Args:
+            salt_hint: optional salt/generic name from LLM parsing to boost results
+            limit: max results to return (use higher for salt-name queries to capture
+                   pure formulations buried by price sorting)
         """
         self.load()
         query_lower = query.lower().strip()
         query_words = query_lower.split()
 
         scored: list[tuple[int, dict]] = []
+        seen_ids: set[str] = set()
+
+        def _add(score: int, d: dict):
+            did = d.get("id", "")
+            if did not in seen_ids:
+                seen_ids.add(did)
+                scored.append((score, d))
 
         # Strategy 1: Exact brand name match (highest score)
         if query_lower in self._brand_index:
             for d in self._brand_index[query_lower]:
-                scored.append((100, d))
+                _add(100, d)
 
-        # Strategy 2: First word match
-        if not scored and query_words:
+        # Strategy 2: First word match (only if first word is 3+ chars)
+        if not scored and query_words and len(query_words[0]) >= 3:
             first = query_words[0]
             if first in self._brand_index:
                 for d in self._brand_index[first]:
-                    # Bonus if more words match
                     name_lower = d["brand_name"].lower()
                     word_matches = sum(1 for w in query_words if w in name_lower)
-                    scored.append((50 + word_matches * 10, d))
+                    _add(50 + word_matches * 10, d)
 
-        # Strategy 3: Salt name match (good for single-word generic queries like "Pantoprazole")
+        # Strategy 3: Salt name match
         salt_id = self._salt_by_name.get(query_lower)
         if salt_id and not scored:
             for d in self._drugs_by_salt.get(salt_id, []):
-                scored.append((80, d))
+                _add(80, d)
 
-        # Strategy 4: Substring match (lower score)
+        # Strategy 3b: LLM salt hint — boost results matching the salt
+        if salt_hint and not scored:
+            hint_lower = salt_hint.lower().strip()
+            hint_salt_id = self._salt_by_name.get(hint_lower)
+            if hint_salt_id:
+                for d in self._drugs_by_salt.get(hint_salt_id, []):
+                    _add(75, d)
+
+        # Strategy 4: Substring match — STRICT guards to avoid gibberish matches
         if not scored:
-            for name, drugs in self._brand_index.items():
-                if query_lower in name or any(w in name for w in query_words):
-                    for d in drugs:
-                        scored.append((20, d))
-                    if len(scored) > 50:
-                        break
+            # Only attempt substring if query is a real-looking drug name (3+ alpha chars)
+            if len(query_lower) >= 3 and any(c.isalpha() for c in query_lower):
+                for name, drugs in self._brand_index.items():
+                    # Require the query to be a prefix of the brand name OR
+                    # the brand name to start with query's first word (3+ chars)
+                    first_word = query_words[0] if query_words else ""
+                    is_prefix = name.startswith(query_lower)
+                    is_first_word_prefix = (
+                        len(first_word) >= 4 and name.startswith(first_word)
+                    )
+                    if is_prefix or is_first_word_prefix:
+                        for d in drugs:
+                            _add(30, d)
+                        if len(scored) > 100:
+                            break
 
-        # Strategy 5: Salt name partial match
-        if not scored:
-            salt_id = self._salt_by_name.get(query_lower)
-            if salt_id:
-                for d in self._drugs_by_salt.get(salt_id, []):
-                    scored.append((10, d))
+        # Store salt_hint for use in combo penalty calculation
+        self._last_salt_hint = salt_hint
 
-        # Sort by score (descending), then by price (descending for branded reference)
-        scored.sort(key=lambda x: (x[0], float(x[1].get("mrp", 0))), reverse=True)
-        return [d for _, d in scored[:100]]
+        # Sort: score descending, -penalty ascending (lower penalty = purer = better, so -penalty is lower for purer)
+        if salt_hint:
+            scored.sort(key=lambda x: (x[0], -self._combo_penalty(x[1])))
+        else:
+            scored.sort(key=lambda x: (x[0], float(x[1].get("mrp", 0))), reverse=True)
+        return [d for _, d in scored[:limit]]
 
-    def _pick_best_match(self, query: str, hits: list[dict]) -> dict:
+    def _combo_penalty(self, drug: dict) -> float:
+        """Return a penalty score for combo drugs (lower = better for salt queries)."""
+        name_lower = drug.get("brand_name", "").lower()
+        strength_val = drug.get("strength", "")
+        penalty = 0.0
+        # Penalize combo signatures
+        if "/" in strength_val:
+            penalty -= 200
+        if "/" in name_lower and "mg" in name_lower:
+            penalty -= 100
+        dose_numbers = re.findall(r"\d+(?:\.\d+)?", name_lower)
+        if len(dose_numbers) > 1:
+            penalty -= 150
+        # Bonus for brand name containing salt name hint
+        salt_hint = getattr(self, "_last_salt_hint", "") or ""
+        if salt_hint and salt_hint[:4] in name_lower:
+            penalty += 50
+        return penalty
+
+    def _pick_best_match(
+        self, query: str, hits: list[dict], salt_hint: str | None = None
+    ) -> dict:
         """Pick the single best branded drug match from search hits.
 
-        Prefers: exact name match > name contains query > highest price.
+        Prefers: salt hint match > exact name match > name contains query > highest price.
         Among ties, picks the popular branded version (higher price).
         """
         query_lower = query.lower().strip()
         query_words = query_lower.split()
 
-        # Extract strength hint from query (e.g., "500" from "Crocin 500")
+        # Extract strength hint from query (e.g., "500" from "Crocin 500" or "500mg")
         strength_hint = ""
         for w in query_words:
-            if re.match(r"\d+", w):
-                strength_hint = w
+            m = re.match(r"(\d+)", w)
+            if m:
+                strength_hint = m.group(1)  # just the numeric part
                 break
+
+        # Resolve salt_hint to salt_id for matching
+        hint_salt_id = None
+        if salt_hint:
+            hint_salt_id = self._salt_by_name.get(salt_hint.lower().strip())
 
         best = None
         best_score = -1
@@ -214,6 +271,26 @@ class DrugLookupService:
         for d in hits:
             name_lower = d["brand_name"].lower()
             score = 0
+
+            # Salt hint match — strong signal from LLM (e.g., Crocin → Paracetamol, not Caffeine)
+            if hint_salt_id and d.get("salt_id") == hint_salt_id:
+                score += 500
+                # Penalize combo drugs (strength contains "/" like "10mg/160mg")
+                strength_val = d.get("strength", "")
+                if "/" in strength_val:
+                    score -= 200
+                # Penalize brand names that suggest combo (contain "mg/" or multiple dose numbers)
+                if "/" in name_lower and "mg" in name_lower:
+                    score -= 100
+                # Bonus if brand name contains the salt/query name (likely a pure formulation)
+                salt_name_hint = (salt_hint or "").lower()
+                if salt_name_hint and salt_name_hint[:4] in name_lower:
+                    score += 50
+                # Penalize likely combos: brand names with secondary dose numbers
+                # e.g., "Vozuca-M 0.3 Activ" has "0.3" indicating a second ingredient
+                dose_numbers = re.findall(r"\d+(?:\.\d+)?", name_lower)
+                if len(dose_numbers) > 1:
+                    score -= 150
 
             # Exact full name match
             if name_lower == query_lower:
@@ -227,9 +304,17 @@ class DrugLookupService:
             word_matches = sum(1 for w in query_words if w in name_lower)
             score += word_matches * 20
 
-            # Strength match bonus
-            if strength_hint and strength_hint in d.get("strength", ""):
-                score += 50
+            # Strength match bonus — check both the strength field and brand name
+            if strength_hint:
+                drug_strength = d.get("strength", "")
+                # Exact strength match (e.g., "5mg" starts with "5" and is not "50mg")
+                strength_num = re.match(r"(\d+)", drug_strength)
+                if strength_num and strength_num.group(1) == strength_hint:
+                    score += 150  # strong bonus for exact numeric match
+                elif strength_hint in drug_strength:
+                    score += 50  # partial (e.g., "5" in "500mg")
+                elif strength_hint in name_lower:
+                    score += 40
 
             # Prefer tablets over injections/infusions (more common user request)
             form = d.get("dosage_form", "").lower()
@@ -240,8 +325,11 @@ class DrugLookupService:
             elif "syrup" in form:
                 score += 5
 
-            # Tiebreaker: higher price = more likely the branded version
-            score += float(d.get("mrp", 0)) / 10000
+            # Tiebreaker: moderate price preferred (too cheap = obscure, too expensive = combo/specialty)
+            mrp = float(d.get("mrp", 0))
+            if 20 <= mrp <= 200:
+                score += 5  # sweet spot for common branded drugs
+            score += mrp / 100000  # tiny tiebreaker for determinism
 
             if score > best_score:
                 best_score = score
@@ -249,16 +337,35 @@ class DrugLookupService:
 
         return best or hits[0]
 
-    def lookup(self, query: str, pin_code: str | None = None) -> LookupResult:
+    def lookup(
+        self,
+        query: str,
+        pin_code: str | None = None,
+        salt_hint: str | None = None,
+    ) -> LookupResult:
         """Full lookup: find drug, generics, ceiling price, and nearby stores."""
         self.load()
 
-        hits = self.search(query)
+        query_lower = query.lower().strip()
+        is_salt_query = 500 if (
+            query_lower in self._salt_by_name
+            or (salt_hint and salt_hint.lower().strip() == query_lower)
+            or (
+                salt_hint
+                and any(
+                    salt_hint.lower().strip() in name
+                    for name in self._brand_index.keys()
+                )
+            )
+        ) else 100
+        search_limit = is_salt_query if isinstance(is_salt_query, int) else 100
+
+        hits = self.search(query, salt_hint=salt_hint, limit=search_limit)
         if not hits:
             return LookupResult(query=query, matched=False)
 
         # Pick the best match using smart ranking
-        top = self._pick_best_match(query, hits)
+        top = self._pick_best_match(query, hits, salt_hint=salt_hint)
 
         salt_id = top["salt_id"]
         salt_name = self._salts.get(salt_id, {}).get("name", "Unknown")
@@ -316,19 +423,11 @@ class DrugLookupService:
                 )
                 break
 
-        # Nearby stores by pin code
+        # Nearby stores by pin code (with prefix fallback for geocoded pins that don't exactly match)
         stores = []
         if pin_code:
-            store_rows = self._stores_by_pin.get(pin_code, [])
-            for s in store_rows[:5]:
-                stores.append(StoreResult(
-                    store_code=s.get("store_code", ""),
-                    address=s.get("address", ""),
-                    district=s.get("district", ""),
-                    state=s.get("state", ""),
-                    pin_code=s.get("pin_code", ""),
-                    phone=s.get("phone", ""),
-                ))
+            found_stores = self.find_stores_by_pin(pin_code, limit=5)
+            stores = found_stores
 
         return LookupResult(
             query=query,
@@ -374,5 +473,20 @@ class DrugLookupService:
         return results
 
 
-# Singleton for the app
-drug_lookup = DrugLookupService()
+# Singleton for the app — uses Supabase in production, CSV for local dev
+# Auto-detect: if SUPABASE_URL is set, use AsyncSupabaseLookup, else CSV
+from app.core.config import settings
+
+_drug_lookup_instance = None
+
+def get_drug_lookup():
+    global _drug_lookup_instance
+    if _drug_lookup_instance is None:
+        if settings.supabase_url and settings.supabase_secret_key:
+            from app.services.drug.async_supabase_lookup import AsyncSupabaseLookup
+            _drug_lookup_instance = AsyncSupabaseLookup()
+        else:
+            _drug_lookup_instance = DrugLookupService()
+    return _drug_lookup_instance
+
+drug_lookup = get_drug_lookup()
