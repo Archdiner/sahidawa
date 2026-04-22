@@ -2,17 +2,28 @@
 
 import json
 import os
+import re
 import urllib.request
 
 from fastapi import APIRouter
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel, field_validator
 
 router = APIRouter(prefix="/waitlist", tags=["waitlist"])
 
+_EMAIL_RE = re.compile(r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$")
+
 
 class WaitlistRequest(BaseModel):
-    email: EmailStr
+    email: str
     name: str = ""
+
+    @field_validator("email")
+    @classmethod
+    def validate_email(cls, v: str) -> str:
+        v = v.strip().lower()
+        if not _EMAIL_RE.match(v):
+            raise ValueError("Invalid email address")
+        return v
 
 
 class WaitlistResponse(BaseModel):
@@ -22,7 +33,7 @@ class WaitlistResponse(BaseModel):
 
 @router.post("", response_model=WaitlistResponse)
 async def waitlist_signup(req: WaitlistRequest) -> WaitlistResponse:
-    email = req.email.strip().lower()
+    email = req.email
     name = req.name.strip() or None
 
     supabase_url = os.environ.get("SUPABASE_URL")

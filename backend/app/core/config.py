@@ -2,14 +2,21 @@ from pathlib import Path
 
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
-# Look for .env in project root (parent of backend/)
-_PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent.parent
-_ENV_FILE = _PROJECT_ROOT / ".env"
+# Look for .env — try backend/ first, then project root
+_BACKEND_ROOT = Path(__file__).resolve().parent.parent.parent
+_PROJECT_ROOT = _BACKEND_ROOT.parent
+
+# Use whichever .env exists (Vercel uses env vars directly, so this is for local dev)
+_ENV_FILE = ""
+for candidate in [_BACKEND_ROOT / ".env", _PROJECT_ROOT / ".env"]:
+    if candidate.exists():
+        _ENV_FILE = str(candidate)
+        break
 
 
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(
-        env_file=str(_ENV_FILE),
+        env_file=_ENV_FILE if _ENV_FILE else None,
         env_file_encoding="utf-8",
         extra="ignore",
     )
